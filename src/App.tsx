@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Lawyers from "./pages/Lawyers";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import Chinese from "./pages/Chinese";
+import Korean from "./pages/Korean";
 import NotFound from "./pages/NotFound";
 
 // Service pages
@@ -38,6 +40,8 @@ const App = () => (
           <Route path="/lawyers" element={<Lawyers />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/chinese" element={<Chinese />} />
+          <Route path="/korean" element={<Korean />} />
           
           {/* Service detail pages */}
           <Route path="/services/administrative-law" element={<AdministrativeLaw />} />
