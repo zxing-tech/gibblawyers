@@ -18,11 +18,11 @@ const Header = () => {
 
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-background/95">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl lg:text-3xl font-bold text-primary">
+          <Link to="/" className="flex items-center space-x-2 min-w-0 flex-shrink-0">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary truncate">
               GIBB<span className="text-accent">&co</span>
             </div>
           </Link>
@@ -59,22 +59,23 @@ const Header = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="lg:hidden"
+            className="lg:hidden min-w-[44px] min-h-[44px] p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border">
-            <nav className="flex flex-col space-y-4">
+            <nav className="flex flex-col space-y-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                  className={`text-base font-medium transition-colors hover:text-primary py-3 px-2 min-h-[44px] flex items-center ${
                     isActive(item.href) ? 'text-primary' : 'text-foreground'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
