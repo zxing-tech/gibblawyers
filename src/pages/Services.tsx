@@ -1,23 +1,24 @@
+import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Services = () => {
   const practices = [
-    { name: "ADMINISTRATIVE LAW", url: "https://gibblawyers.com/wp/administrative-law/" },
-    { name: "ALTERNATE DISPUTE RESOLUTION & LITIGATION", url: "https://gibblawyers.com/wp/litigation-adr/" },
-    { name: "BANKING & FINANCE", url: "https://gibblawyers.com/wp/banking-finance/" },
-    { name: "CONSTRUCTION & ENGINEERING LAW", url: "https://gibblawyers.com/litigation-adr/" },
-    { name: "CORPORATE & COMMERCIAL LAW", url: "https://gibblawyers.com/wp/corporate-restructuring/" },
-    { name: "CRIMINAL LAW", url: "https://gibblawyers.com/wp/criminal-law/" },
-    { name: "DEBT RECOVERY", url: "https://gibblawyers.com/wp/debt-recovery/" },
-    { name: "EMPLOYMENT INDUSTRIAL & HUMAN RESOURCES", url: "https://gibblawyers.com/wp/employment/" },
-    { name: "FAMILY LAW", url: "https://gibblawyers.com/wp/family-law/" },
-    { name: "INSOLVENCY & LIQUIDATION", url: "https://gibblawyers.com/wp/insolvency-liquidation/" },
-    { name: "INSURANCE", url: "https://gibblawyers.com/wp/insurance/" },
-    { name: "INTELLECTUAL PROPERTY", url: "https://gibblawyers.com/wp/intellectual-property/" },
-    { name: "REAL ESTATE & CONVEYANCING", url: "https://gibblawyers.com/wp/real-estate-conveyancing/" },
-    { name: "TRUST & ESTATE PLANNING", url: "https://gibblawyers.com/wp/estates-trusts/" }
+    { name: "ADMINISTRATIVE LAW", url: "/services/administrative-law" },
+    { name: "ALTERNATE DISPUTE RESOLUTION & LITIGATION", url: "/services/litigation-adr" },
+    { name: "BANKING & FINANCE", url: "/services/banking-finance" },
+    { name: "CONSTRUCTION & ENGINEERING LAW", url: "/services/construction-engineering" },
+    { name: "CORPORATE & COMMERCIAL LAW", url: "/services/corporate-commercial" },
+    { name: "CRIMINAL LAW", url: "/services/criminal-law" },
+    { name: "DEBT RECOVERY", url: "/services/debt-recovery" },
+    { name: "EMPLOYMENT INDUSTRIAL & HUMAN RESOURCES", url: "/services/employment" },
+    { name: "FAMILY LAW", url: "/services/family-law" },
+    { name: "INSOLVENCY & LIQUIDATION", url: "/services/insolvency-liquidation" },
+    { name: "INSURANCE", url: "/services/insurance" },
+    { name: "INTELLECTUAL PROPERTY", url: "/services/intellectual-property" },
+    { name: "REAL ESTATE & CONVEYANCING", url: "/services/real-estate-conveyancing" },
+    { name: "TRUST & ESTATE PLANNING", url: "/services/trust-estates" }
   ];
 
   const trainingTopics = [
@@ -76,11 +77,9 @@ const Services = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {practices.map((practice, index) => (
-              <a
+              <Link
                 key={index}
-                href={practice.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                to={practice.url}
                 className="group block"
               >
                 <Card className="h-full hover:shadow-elegant hover:border-primary/20 transition-all duration-500 border border-border/50">
@@ -88,10 +87,10 @@ const Services = () => {
                     <span className="font-medium text-sm sm:text-base text-foreground group-hover:text-primary transition-colors leading-tight">
                       {practice.name}
                     </span>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-3" />
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-3" />
                   </CardContent>
                 </Card>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
