@@ -11,41 +11,11 @@ const Contact = () => {
       name: "Ipoh Office",
       addresses: [
         {
-          address: "55, Lebuh Pearl, Fair Park, 31400, Ipoh, Perak, Malaysia.",
+          address: "Unit 2, 7th floor, Ipoh Tower. Jalan Dato Seri Ahmad Said, 31350 Ipoh.",
           phone: "+605 547 1313",
           fax: "+605 548 1313",
           email: "admin@gibblawyers.com",
-          mapUrl: "https://www.google.com/maps/place/55,+Lebuh+Pearl,+Taman+Fair+Park,+31400+Ipoh,+Perak/@4.608316,101.0942946,17z/data=!3m1!4b1!4m5!3m4!1s0x31caecf28a4827fb:0x130c5b0b39d11131!8m2!3d4.6083107!4d101.0964833"
-        },
-        {
-          address: "9-B, Persiaran Greentown 4, Greentown Business Centre, 30450, Ipoh, Malaysia",
-          phone: "+605 2410027",
-          email: "gibbgreentown@gmail.com",
-          mapUrl: "https://www.google.com/maps/search/9-B,+Persiaran+Greentown+4,+Greentown+Business+Centre,+30450,+Ipoh,+Malaysia/@4.5995292,101.0926041,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D"
-        }
-      ]
-    },
-    {
-      name: "Kuala Lumpur Office",
-      addresses: [
-        {
-          address: "E-23-3, Menara Suezcap, KL Gateway Office, Jalan Kerinchi, 59200 Kuala Lumpur, Malaysia.",
-          phone: "+603 2856 9771",
-          fax: "+603 2856 9772",
-          email: "admin-kl@gibblawyers.com",
-          mapUrl: "https://maps.app.goo.gl/LZ94GM2gRjVtHpUz9"
-        }
-      ]
-    },
-    {
-      name: "Penang Office",
-      addresses: [
-        {
-          address: "No. 5, Lorong Abbas 1, 11200, Tanjung Bungah, Penang, Malaysia.",
-          phone: "+604 899 1778",
-          fax: "+604 891 7007",
-          email: "admin-pg@gibblawyers.com",
-          mapUrl: "https://www.google.com/maps/place/5,+Lorong+Abbas+1,+10200+Tanjung+Bungah,+Pulau+Pinang/@5.4648078,100.2971642,17z/data=!3m1!4b1!4m6!3m5!1s0x304ac2d729b95e09:0x29effb1538d99ca8!8m2!3d5.4648025!4d100.2997391!16s%2Fg%2F11v0__yr1l?entry=ttu"
+          mapUrl: "https://goo.gl/maps/iRwwNmCwdux9ZpfC6"
         }
       ]
     },

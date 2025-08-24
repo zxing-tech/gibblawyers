@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 const Footer = () => {
   const locations = [
     {
-      name: 'PERAK',
+      name: 'IPOH',
       url: 'https://goo.gl/maps/iRwwNmCwdux9ZpfC6',
       icon: Building2
     }
@@ -24,7 +24,7 @@ const Footer = () => {
             Visit Our Offices
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our office location to serve you better in Malaysia
+            Our office location to serve you in Malaysia
           </p>
         </div>
 
