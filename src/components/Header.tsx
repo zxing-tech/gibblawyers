@@ -26,7 +26,7 @@ const Header = () => {
               <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <Award className="h-4 w-4 lg:h-5 lg:w-5 text-white" />
               </div>
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold">
+              <div className="text-xxl sm:text-2xl lg:text-3xl font-bold">
                 <span className="text-primary">GIBB</span>
                 <span className="text-accent">&co</span>
               </div>
