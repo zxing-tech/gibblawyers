@@ -13,6 +13,8 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'Lawyers', href: '/lawyers' },
     { name: 'Services', href: '/services' },
+    { name: 'History', href: '/history' },
+    { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -22,11 +24,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 min-w-0 flex-shrink-0 group">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <Award className="h-4 w-4 lg:h-5 lg:w-5 text-white" />
-              </div>
-              <div className="text-xxl sm:text-2xl lg:text-3xl font-bold">
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/images/gibb-logo.png" 
+                alt="Gibb & Co Lawyers Logo" 
+                className="h-8 w-auto lg:h-10 group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold">
                 <span className="text-primary">GIBB</span>
                 <span className="text-accent">&co</span>
               </div>
@@ -36,7 +40,7 @@ const Header = () => {
           {/* Est. 1892 Badge - Hidden on mobile */}
           <div className="hidden md:flex items-center space-x-4 px-4 py-2 border border-primary/20 rounded-full bg-primary/5">
             <div className="w-8 h-px bg-primary/40"></div>
-            <span className="text-sm font-semibold text-primary tracking-wider uppercase">EST. 1892</span>
+            <span className="text-sm font-heading font-semibold text-primary tracking-wider uppercase">EST. 1892</span>
             <div className="w-8 h-px bg-primary/40"></div>
           </div>
 
@@ -46,7 +50,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-all duration-300 hover:text-primary relative ${
+                className={`text-sm font-body font-medium transition-all duration-300 hover:text-primary relative ${
                   isActive(item.href)
                     ? 'text-primary'
                     : 'text-foreground'

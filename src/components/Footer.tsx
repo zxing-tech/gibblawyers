@@ -1,6 +1,7 @@
-import { ExternalLink, Download, MessageCircle, MapPin, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
+import { Building2, MapPin, ExternalLink, MessageCircle, Download } from 'lucide-react';
 
 const Footer = () => {
   const locations = [
@@ -20,7 +21,7 @@ const Footer = () => {
           <div className="flex justify-center mb-6 sm:mb-8">
             <div className="w-20 sm:w-24 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <h2 className="heading-display text-2xl sm:text-3xl lg:text-4xl mb-4">
             Visit Our Offices
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -113,16 +114,20 @@ const Footer = () => {
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-muted-foreground/30 to-transparent"></div>
             </div>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              © 2020 Copyright All Rights Reserved.
+              © 2024 Gibb & Co. All Rights Reserved.
               <br className="sm:hidden" />
               <span className="hidden sm:inline mx-3">|</span>
-              <a href="#" className="text-primary hover:text-primary/80 transition-colors underline-offset-4 hover:underline">
+              <Link to="/disclaimer" className="text-primary hover:text-primary/80 transition-colors underline-offset-4 hover:underline">
                 Disclaimer
-              </a>
+              </Link>
               <span className="mx-3">|</span> 
-              <a href="#" className="text-primary hover:text-primary/80 transition-colors underline-offset-4 hover:underline">
+              <Link to="/privacy-policy" className="text-primary hover:text-primary/80 transition-colors underline-offset-4 hover:underline">
                 Privacy Policy
-              </a>
+              </Link>
+              <span className="mx-3">|</span> 
+              <Link to="/terms-of-service" className="text-primary hover:text-primary/80 transition-colors underline-offset-4 hover:underline">
+                Terms of Service
+              </Link>
             </p>
             <div className="flex items-center justify-center space-x-3 pt-4">
               <div className="w-6 h-px bg-primary/40"></div>

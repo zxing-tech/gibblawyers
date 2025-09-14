@@ -1,0 +1,28 @@
+{
+  "name": "Gibb & Co Lawyers",
+  "short_name": "Gibb Lawyers",
+  "description": "Established 1892. Comprehensive legal services in Malaysia.",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png", 
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#C18C43",
+  "background_color": "#FAF8F5",
+  "orientation": "portrait-primary"
+}

@@ -3,9 +3,84 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { MapPin, Phone, Mail, ExternalLink, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, ExternalLink, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
+import { useState } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
+import { EmailService, type ContactFormData } from '@/lib/emailService';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Insert the contact form data into Supabase
+      const { error } = await supabase.from('contacts').insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || null,
+          message: formData.message,
+          consent: true
+        }
+      ]);
+
+      if (error) {
+        console.error('Supabase error:', error);
+        toast.error('There was an error submitting your message. Please try again or contact us directly.');
+        return;
+      }
+
+      // Send email notifications
+      const contactData: ContactFormData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message
+      };
+
+      // Send admin notification
+      const adminEmailResult = await EmailService.sendContactNotification(contactData);
+      
+      // Send client acknowledgment
+      const clientEmailResult = await EmailService.sendClientAcknowledgment(formData.email, formData.name);
+      
+      // Success response
+      setIsSubmitted(true);
+      setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+      
+      if (adminEmailResult.success && clientEmailResult.success) {
+        toast.success('Thank you for your message! We will get back to you within 24 hours. A confirmation email has been sent to you.');
+      } else if (adminEmailResult.success) {
+        toast.success('Thank you for your message! We will get back to you within 24 hours.');
+      } else {
+        toast.success('Your message has been received. We will get back to you within 24 hours.');
+        console.warn('Email notification issues:', { adminEmailResult, clientEmailResult });
+      }
+      
+    } catch (error) {
+      console.error('Submission error:', error);
+      toast.error('There was an error submitting your message. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const offices = [
     {
       name: "Ipoh Office",
@@ -179,95 +254,135 @@ const Contact = () => {
             
             <Card className="border border-border/50">
               <CardContent className="p-6 sm:p-8">
-                <form className="space-y-4 sm:space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                        Name *
-                      </label>
-                      <Input 
-                        id="name" 
-                        type="text" 
-                        required 
-                        className="min-h-[44px]"
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                        Phone
-                      </label>
-                      <Input 
-                        id="phone" 
-                        type="tel" 
-                        className="min-h-[44px]"
-                        placeholder="Your phone number"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email Address *
-                    </label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      required 
-                      className="min-h-[44px]"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                      Subject
-                    </label>
-                    <Input 
-                      id="subject" 
-                      type="text" 
-                      className="min-h-[44px]"
-                      placeholder="Brief subject of your inquiry"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                      Message *
-                    </label>
-                    <Textarea 
-                      id="message" 
-                      required 
-                      rows={5}
-                      className="resize-none"
-                      placeholder="Please describe your legal inquiry or questions..."
-                    />
-                  </div>
-                  
-                  <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                {isSubmitted ? (
+                  <div className="text-center py-8">
+                    <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold text-foreground mb-2">Message Sent Successfully!</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Thank you for contacting us. We will review your inquiry and respond within 24 hours.
+                    </p>
                     <Button 
-                      type="submit" 
-                      className="min-h-[44px] w-full sm:w-auto px-6 py-3 font-semibold"
-                    >
-                      Send Message
-                    </Button>
-                    <Button 
-                      asChild
+                      onClick={() => setIsSubmitted(false)}
                       variant="outline"
-                      className="min-h-[44px] w-full sm:w-auto px-6 py-3 font-semibold"
                     >
-                      <a
-                        href="https://api.whatsapp.com/send/?phone=60124775779&text=Hi+there&app_absent=0"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2"
-                      >
-                        <MessageCircle className="h-4 w-4" />
-                        WhatsApp Us
-                      </a>
+                      Send Another Message
                     </Button>
                   </div>
-                </form>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                          Name *
+                        </label>
+                        <Input 
+                          id="name" 
+                          type="text" 
+                          required 
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          className="min-h-[44px]"
+                          placeholder="Your full name"
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                          Phone
+                        </label>
+                        <Input 
+                          id="phone" 
+                          type="tel" 
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          className="min-h-[44px]"
+                          placeholder="Your phone number"
+                          disabled={isSubmitting}
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                        Email Address *
+                      </label>
+                      <Input 
+                        id="email" 
+                        type="email" 
+                        required 
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className="min-h-[44px]"
+                        placeholder="your.email@example.com"
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                        Subject
+                      </label>
+                      <Input 
+                        id="subject" 
+                        type="text" 
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        className="min-h-[44px]"
+                        placeholder="Brief subject of your inquiry"
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                        Message *
+                      </label>
+                      <Textarea 
+                        id="message" 
+                        required 
+                        rows={5}
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        className="resize-none"
+                        placeholder="Please describe your legal inquiry or questions..."
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                    
+                    <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                      <Button 
+                        type="submit" 
+                        disabled={isSubmitting}
+                        className="min-h-[44px] w-full sm:w-auto px-6 py-3 font-semibold"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                            Sending...
+                          </>
+                        ) : (
+                          'Send Message'
+                        )}
+                      </Button>
+                      <Button 
+                        asChild
+                        variant="outline"
+                        className="min-h-[44px] w-full sm:w-auto px-6 py-3 font-semibold"
+                        disabled={isSubmitting}
+                      >
+                        <a
+                          href="https://api.whatsapp.com/send/?phone=60124775779&text=Hi+there&app_absent=0"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2"
+                        >
+                          <MessageCircle className="h-4 w-4" />
+                          WhatsApp Us
+                        </a>
+                      </Button>
+                    </div>
+                  </form>
+                )}
               </CardContent>
             </Card>
           </div>

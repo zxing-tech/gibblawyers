@@ -10,6 +10,16 @@ import Contact from "./pages/Contact";
 import Chinese from "./pages/Chinese";
 import Korean from "./pages/Korean";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Disclaimer from "./pages/Disclaimer";
+import FAQ from "./pages/FAQ";
+import History from "./pages/History";
+
+// Lawyer profile pages
+import ZorinahProfile from "./pages/lawyers/ZorinahProfile";
+import ErnestProfile from "./pages/lawyers/ErnestProfile";
+import EdwinProfile from "./pages/lawyers/EdwinProfile";
 
 // Service pages
 import AdministrativeLaw from "./pages/services/AdministrativeLaw";
@@ -42,6 +52,16 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/chinese" element={<Chinese />} />
           <Route path="/korean" element={<Korean />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/history" element={<History />} />
+          
+          {/* Lawyer profile pages */}
+          <Route path="/lawyers/zorinah-mohd-sobri" element={<ZorinahProfile />} />
+          <Route path="/lawyers/ernest-balasingam" element={<ErnestProfile />} />
+          <Route path="/lawyers/edwin-seibel" element={<EdwinProfile />} />
           
           {/* Service detail pages */}
           <Route path="/services/administrative-law" element={<AdministrativeLaw />} />

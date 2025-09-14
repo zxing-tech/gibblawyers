@@ -2,22 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gibblawyers.com/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-09-14</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://gibblawyers.com/lawyers</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-09-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gibblawyers.com/services</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-09-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gibblawyers.com/contact</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-09-14</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gibblawyers.com/faq</loc>
+    <lastmod>2024-09-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gibblawyers.com/privacy-policy</loc>
+    <lastmod>2024-09-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gibblawyers.com/terms-of-service</loc>
+    <lastmod>2024-09-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gibblawyers.com/disclaimer</loc>
+    <lastmod>2024-09-14</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://gibblawyers.com/services/corporate-commercial</loc>
+    <lastmod>2024-09-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gibblawyers.com/services/real-estate-conveyancing</loc>
+    <lastmod>2024-09-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gibblawyers.com/services/banking-finance</loc>
+    <lastmod>2024-09-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gibblawyers.com/services/litigation-adr</loc>
+    <lastmod>2024-09-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gibblawyers.com/chinese</loc>
+    <lastmod>2024-09-14</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://gibblawyers.com/korean</loc>
+    <lastmod>2024-09-14</lastmod>
+    <priority>0.4</priority>
   </url>
 </urlset>

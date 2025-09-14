@@ -17,6 +17,13 @@ export default {
 				'2xl': '1400px'
 			}
 		},
+		fontFamily: {
+			'serif': ['Playfair Display', 'Georgia', 'Times New Roman', 'serif'],
+			'sans': ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+			'heading': ['Playfair Display', 'Georgia', 'serif'],
+			'body': ['Inter', 'system-ui', 'sans-serif'],
+			'legal': ['Crimson Text', 'Georgia', 'Times New Roman', 'serif']
+		},
 		extend: {
 			colors: {
 				border: 'hsl(var(--border))',

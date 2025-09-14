@@ -1,54 +1,65 @@
+/* Professional Legal Typography Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Gibb Lawyers Design System - Inspired by existing brand colors and professional aesthetic
+/* Gibb Lawyers Design System - Warm Gold & Charcoal Professional Theme
+Color Palette:
+- Primary (Warm Gold): #C18C43 - Headings, emphasis text, navigation links
+- Secondary (Charcoal Black): #2F2F2F - Body text, paragraph copy  
+- Background (Off-White): #FAF8F5 - Page background
+- Accent (Slate Grey): #7A7A7A - Subtext and de-emphasized information
+- Border (Muted Gold Line): #D5B383 - Horizontal dividers
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 31 19% 15%;
+    --background: 44 33% 97%; /* #FAF8F5 - Off-White */
+    --foreground: 0 0% 18%; /* #2F2F2F - Charcoal Black */
     
-    /* Gibb Brand Colors - Golden/Bronze Heritage Theme */
-    --gibb-gold: 32 85% 55%;
-    --gibb-gold-light: 35 90% 65%;
-    --gibb-gold-dark: 30 75% 45%;
-    --gibb-bronze: 28 45% 35%;
-    --gibb-bronze-dark: 25 40% 25%;
+    /* Gibb Brand Colors - Updated Warm Gold & Charcoal Theme */
+    --gibb-gold: 34 58% 51%; /* #C18C43 - Warm Gold */
+    --gibb-gold-light: 34 65% 60%; /* Lighter variant */
+    --gibb-gold-dark: 34 50% 45%; /* Darker variant */
+    --gibb-bronze: 34 48% 68%; /* #D5B383 - Muted Gold Line */
+    --gibb-bronze-dark: 34 40% 55%; /* Darker variant */
     
     /* Professional Grays */
-    --gibb-gray-50: 0 0% 98%;
-    --gibb-gray-100: 0 0% 95%;
-    --gibb-gray-200: 0 0% 90%;
-    --gibb-gray-800: 0 0% 20%;
-    --gibb-gray-900: 0 0% 10%;
+    --gibb-gray-50: 44 33% 97%; /* #FAF8F5 - Off-White */
+    --gibb-gray-100: 44 20% 95%;
+    --gibb-gray-200: 44 15% 90%;
+    --gibb-gray-800: 0 0% 48%; /* #7A7A7A - Slate Grey */
+    --gibb-gray-900: 0 0% 18%; /* #2F2F2F - Charcoal Black */
 
-    --card: 0 0% 100%;
-    --card-foreground: 31 19% 15%;
+    --card: 44 33% 97%; /* #FAF8F5 - Off-White */
+    --card-foreground: 0 0% 18%; /* #2F2F2F - Charcoal Black */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 31 19% 15%;
+    --popover: 44 33% 97%; /* #FAF8F5 - Off-White */
+    --popover-foreground: 0 0% 18%; /* #2F2F2F - Charcoal Black */
 
-    --primary: 32 85% 55%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 34 58% 51%; /* #C18C43 - Warm Gold */
+    --primary-foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
 
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 31 19% 15%;
+    --secondary: 44 20% 95%;
+    --secondary-foreground: 0 0% 18%; /* #2F2F2F - Charcoal Black */
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 44 20% 95%;
+    --muted-foreground: 0 0% 48%; /* #7A7A7A - Slate Grey */
 
-    --accent: 32 85% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 34 48% 68%; /* #D5B383 - Muted Gold Line */
+    --accent-foreground: 0 0% 18%; /* #2F2F2F - Charcoal Black */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 32 85% 55%;
+    --border: 34 48% 68%; /* #D5B383 - Muted Gold Line */
+    --input: 44 20% 90%;
+    --ring: 34 58% 51%; /* #C18C43 - Warm Gold */
 
     --radius: 0.75rem;
     
@@ -59,59 +70,59 @@ All colors MUST be HSL.
     --shadow-gold: 0 0 40px hsl(var(--gibb-gold) / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 44 33% 97%; /* #FAF8F5 - Off-White */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-foreground: 0 0% 18%; /* #2F2F2F - Charcoal Black */
 
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 34 58% 51%; /* #C18C43 - Warm Gold */
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-primary-foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent: 44 20% 95%;
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 0 0% 18%; /* #2F2F2F - Charcoal Black */
 
-    --sidebar-border: 220 13% 91%;
+    --sidebar-border: 34 48% 68%; /* #D5B383 - Muted Gold Line */
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 34 58% 51%; /* #C18C43 - Warm Gold */
   }
 
   .dark {
-    --background: 25 40% 8%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 18%; /* #2F2F2F - Charcoal Black */
+    --foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
 
-    --card: 25 40% 8%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 18%; /* #2F2F2F - Charcoal Black */
+    --card-foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
 
-    --popover: 25 40% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 18%; /* #2F2F2F - Charcoal Black */
+    --popover-foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
 
-    --primary: 32 85% 55%;
-    --primary-foreground: 0 0% 10%;
+    --primary: 34 58% 51%; /* #C18C43 - Warm Gold */
+    --primary-foreground: 0 0% 18%; /* #2F2F2F - Charcoal Black */
 
-    --secondary: 25 40% 15%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
 
-    --muted: 25 40% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 48%; /* #7A7A7A - Slate Grey */
 
-    --accent: 32 85% 55%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 34 48% 68%; /* #D5B383 - Muted Gold Line */
+    --accent-foreground: 0 0% 18%; /* #2F2F2F - Charcoal Black */
 
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive-foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
 
-    --border: 25 40% 15%;
-    --input: 25 40% 15%;
-    --ring: 32 85% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 34 58% 51%; /* #C18C43 - Warm Gold */
+    --sidebar-background: 0 0% 18%; /* #2F2F2F - Charcoal Black */
+    --sidebar-foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
+    --sidebar-primary: 34 58% 51%; /* #C18C43 - Warm Gold */
+    --sidebar-primary-foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
+    --sidebar-accent: 0 0% 25%;
+    --sidebar-accent-foreground: 44 33% 97%; /* #FAF8F5 - Off-White */
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 34 58% 51%; /* #C18C43 - Warm Gold */
   }
 }
 
@@ -121,7 +132,34 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+  
+  /* Professional Legal Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  /* Elegant heading styles for legal branding */
+  .heading-hero {
+    @apply font-heading font-bold tracking-tight;
+  }
+  
+  .heading-display {
+    @apply font-heading font-semibold tracking-wide;
+  }
+  
+  .heading-section {
+    @apply font-heading font-bold;
+  }
+  
+  .text-legal {
+    @apply font-legal leading-relaxed;
+  }
+  
+  /* Professional body text */
+  p {
+    @apply font-body;
   }
 }
 
@@ -147,5 +185,34 @@ All colors MUST be HSL.
   
   .text-gradient {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary;
+  }
+  
+  /* Professional Legal Typography Utilities */
+  .text-legal-formal {
+    @apply font-legal text-lg leading-relaxed tracking-wide;
+  }
+  
+  .heading-legal {
+    @apply font-heading font-bold tracking-tight text-foreground;
+    letter-spacing: -0.025em;
+  }
+  
+  .subheading-legal {
+    @apply font-heading font-semibold tracking-wide text-muted-foreground uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .body-legal {
+    @apply font-body leading-relaxed text-muted-foreground;
+    line-height: 1.75;
+  }
+  
+  /* Enhanced professional spacing for legal content */
+  .legal-section {
+    @apply py-16 sm:py-20 lg:py-32;
+  }
+  
+  .legal-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
 }

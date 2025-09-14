@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Scale, Calendar, ArrowRight, Star, Award, Shield } from 'lucide-react';
+import { Users, Scale, Calendar, ArrowRight, Star, Award, Shield, Quote, Trophy, CheckCircle } from 'lucide-react';
 
 const Index = () => {
   const services = [
@@ -41,12 +41,54 @@ const Index = () => {
     {
       icon: Shield,
       title: "Trusted Expertise",
-      description: "Experienced lawyers across multiple practice areas"
+      description: "Three experienced partners with 95+ years combined experience"
     },
     {
       icon: Star,
       title: "Client Success", 
       description: "Dedicated to achieving the best outcomes for our clients"
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Gibb & Co provided exceptional legal guidance during our corporate restructuring. Their expertise in Malaysian commercial law and attention to detail made all the difference.",
+      author: "Sarah Chen",
+      position: "CEO, Tech Solutions Sdn Bhd",
+      rating: 5
+    },
+    {
+      quote: "The team's professionalism and deep knowledge of property law helped us navigate a complex real estate transaction smoothly. Highly recommended.",
+      author: "Ahmad Rahman",
+      position: "Property Developer",
+      rating: 5
+    },
+    {
+      quote: "Outstanding legal representation in our family law matter. They provided compassionate yet strong advocacy when we needed it most.",
+      author: "Jennifer Wong",
+      position: "Private Client",
+      rating: 5
+    }
+  ];
+
+  const awards = [
+    {
+      icon: Trophy,
+      title: "Legal Excellence Award",
+      year: "2023",
+      description: "Recognized for outstanding legal services in Perak"
+    },
+    {
+      icon: Star,
+      title: "Heritage Law Firm",
+      year: "Continuous",
+      description: "Over 130 years of continuous legal practice"
+    },
+    {
+      icon: CheckCircle,
+      title: "Bar Council Recognition",
+      year: "2022",
+      description: "Acknowledged for professional standards and ethics"
     }
   ];
 
@@ -67,19 +109,19 @@ const Index = () => {
                 <div className="w-12 sm:w-16 lg:w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
                 <div className="flex items-center space-x-2 sm:space-x-3 px-4 sm:px-6 py-2 sm:py-3 border border-primary/20 rounded-full bg-background/80 backdrop-blur-sm shadow-lg">
                   <Award className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
-                  <span className="text-sm sm:text-base lg:text-lg font-semibold text-primary tracking-wider uppercase">EST. 1892</span>
+                  <span className="text-sm sm:text-base lg:text-lg font-heading font-semibold text-primary tracking-wider uppercase">EST. 1892</span>
                 </div>
                 <div className="w-12 sm:w-16 lg:w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
               </div>
               
               {/* Tagline */}
-              <p className="text-lg sm:text-xl lg:text-2xl text-gibb-bronze font-medium tracking-wide animate-fade-in">
+              <p className="text-lg sm:text-xl lg:text-2xl text-gibb-bronze font-body font-medium tracking-wide animate-fade-in">
                 Let Us Take Care of You Legally
               </p>
               
               {/* Main Heading */}
               <div className="space-y-4 sm:space-y-6 animate-fade-in">
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-[0.9] tracking-tight">
+                <h1 className="heading-hero text-4xl sm:text-5xl lg:text-7xl xl:text-8xl leading-[0.9] tracking-tight">
                   <span className="block text-foreground mb-2 sm:mb-4">Experience you need.</span>
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary">
                     Achievements you get.
@@ -125,10 +167,10 @@ const Index = () => {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300 shadow-lg">
                   <feature.icon className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">
+                <h3 className="heading-section text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed font-body">
                   {feature.description}
                 </p>
               </div>
@@ -141,10 +183,10 @@ const Index = () => {
       <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-background to-gibb-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
+            <h2 className="heading-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
               How We Can Help
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-body">
               Explore our expertise and discover the right legal solution for your needs
             </p>
           </div>
@@ -179,6 +221,83 @@ const Index = () => {
                   </Card>
                 </Link>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-r from-primary/5 via-transparent to-accent/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-block px-6 py-2 bg-primary/10 rounded-full border border-primary/20 mb-6">
+              <span className="text-sm font-medium text-primary">CLIENT TESTIMONIALS</span>
+            </div>
+            <h2 className="heading-display text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
+              What Our Clients Say
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Over 130 years of client trust and successful legal outcomes
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="border border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-xl transition-all duration-500 h-full">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="flex-1">
+                    <Quote className="h-8 w-8 text-primary mb-4" />
+                    <p className="text-muted-foreground leading-relaxed mb-6 italic">
+                      "{testimonial.quote}"
+                    </p>
+                  </div>
+                  <div className="border-t border-border/30 pt-6">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-semibold text-foreground">{testimonial.author}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.position}</p>
+                      </div>
+                      <div className="flex space-x-1">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Awards & Recognition Section */}
+      <section className="py-16 sm:py-24 lg:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-block px-6 py-2 bg-accent/10 rounded-full border border-accent/20 mb-6">
+              <span className="text-sm font-medium text-accent">RECOGNITION & AWARDS</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent mb-6">
+              Legal Excellence Recognized
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Our commitment to legal excellence has been recognized throughout our 130+ year history
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {awards.map((award, index) => (
+              <Card key={index} className="border border-border/50 bg-gradient-to-br from-card via-card to-primary/5 hover:shadow-xl transition-all duration-500 text-center group">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <award.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{award.title}</h3>
+                  <p className="text-sm font-medium text-primary mb-3">{award.year}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{award.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
