@@ -90,7 +90,7 @@ const Services = () => {
               <div className="inline-block px-6 py-2 bg-primary/10 rounded-full border border-primary/20 mb-6">
                 <span className="text-sm font-medium text-primary">LEGAL EXPERTISE</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
                 Our Legal Services
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -136,7 +136,7 @@ const Services = () => {
                 <div className="inline-block px-6 py-2 bg-accent/10 rounded-full border border-accent/20 mb-6">
                   <span className="text-sm font-medium text-accent">KNOWLEDGE TRANSFER</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-accent mb-6">
                   Professional Training
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -198,7 +198,7 @@ const Services = () => {
                 <div className="inline-block px-6 py-2 bg-primary/10 rounded-full border border-primary/20 mb-6">
                   <span className="text-sm font-medium text-primary">AUTHENTICATION SERVICES</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
                   Notarial Services
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

@@ -223,7 +223,7 @@ const History = () => {
                 A Heritage of Excellence
               </h2>
               
-              <p className="text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary font-medium leading-relaxed">
+              <p className="text-xl sm:text-2xl text-primary font-medium leading-relaxed">
                 From 1892 to today, we continue the tradition of legal excellence established by our founders.
               </p>
               

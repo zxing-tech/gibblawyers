@@ -42,7 +42,7 @@ const Korean = () => {
               </div>
               
               <div className="space-y-6">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight">
                   저희가 당신을 법적으로 돌보겠습니다
                 </h1>
                 
@@ -83,7 +83,7 @@ const Korean = () => {
         <section className="py-20 px-4 bg-gradient-to-r from-accent/5 via-transparent to-primary/5">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
                 법률 서비스
               </h2>
             </div>
@@ -109,7 +109,7 @@ const Korean = () => {
         <section className="py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
                 문의하기
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

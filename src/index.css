@@ -7,6 +7,54 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Awwwards-Level Design System Enhancements */
+:root {
+  /* Advanced Animation Variables */
+  --elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  
+  /* Modern Spacing System */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  
+  /* Advanced Blur Effects */
+  --blur-xs: 2px;
+  --blur-sm: 4px;
+  --blur-md: 8px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+  
+  /* Geometric Shapes for Modern Design */
+  --border-radius-xs: 0.25rem;
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 0.75rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+  --border-radius-2xl: 2rem;
+  --border-radius-3xl: 3rem;
+  
+  /* Advanced Shadow System */
+  --shadow-minimal: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  
+  /* Glow Effects for Premium Feel */
+  --glow-gold: 0 0 20px rgba(193, 140, 67, 0.3), 0 0 40px rgba(193, 140, 67, 0.2), 0 0 80px rgba(193, 140, 67, 0.1);
+  --glow-soft: 0 0 30px rgba(255, 255, 255, 0.1);
+  --glow-intense: 0 0 60px rgba(193, 140, 67, 0.4);
+}
+
 /* Gibb Lawyers Design System - Warm Gold & Charcoal Professional Theme
 Color Palette:
 - Primary (Warm Gold): #C18C43 - Headings, emphasis text, navigation links
@@ -164,14 +212,195 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  /* Awwwards-Level Animation Classes */
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 1.2s var(--expo) forwards;
   }
   
+  .animate-slide-up {
+    animation: slideUp 1s var(--expo) forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.8s var(--elastic) forwards;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Advanced Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-700;
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+    box-shadow: var(--shadow-2xl), var(--glow-gold);
+  }
+  
+  .hover-magnetic {
+    @apply transition-transform duration-300;
+    cursor: none;
+  }
+  
+  .hover-magnetic:hover {
+    transform: scale(1.05) rotate(1deg);
+  }
+  
+  /* Modern Glass Morphism */
+  .glass {
+    background: rgba(250, 248, 245, 0.1);
+    backdrop-filter: blur(var(--blur-lg));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .glass-intense {
+    background: rgba(250, 248, 245, 0.2);
+    backdrop-filter: blur(var(--blur-xl)) saturate(180%);
+    border: 1px solid rgba(193, 140, 67, 0.3);
+    box-shadow: var(--shadow-xl), var(--glow-gold);
+  }
+  
+  /* Premium Gradient Backgrounds */
+  .bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-conic {
+    background: conic-gradient(from 0deg at center, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-diamond {
+    background: radial-gradient(ellipse at top left, var(--tw-gradient-stops));
+  }
+  
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+  }
+  
+  /* Gradient Text Effects - Fixed for Visibility */
+  .text-gradient {
+    /* Fallback color for browsers that don't support gradient text */
+    color: hsl(var(--primary));
+    background: linear-gradient(135deg, #C18C43 0%, #D5B383 50%, #C18C43 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+  }
+  
+  /* Ensure gradient text has fallback */
+  @supports not (-webkit-background-clip: text) {
+    .text-gradient {
+      color: hsl(var(--primary));
+      -webkit-text-fill-color: unset;
+    }
+  }
+  
+  .text-gradient-animated {
+    /* Fallback color for browsers that don't support gradient text */
+    color: hsl(var(--primary));
+    background: linear-gradient(45deg, #C18C43, #D5B383, #2F2F2F, #C18C43);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 4s ease infinite;
+  }
+  
+  /* Ensure animated gradient text has fallback */
+  @supports not (-webkit-background-clip: text) {
+    .text-gradient-animated {
+      color: hsl(var(--primary));
+      -webkit-text-fill-color: unset;
+    }
+  }
+  
+  /* Modern Geometric Shapes */
+  .shape-hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  
+  .shape-diamond {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  
+  .shape-organic {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  
+  /* Advanced Grid Layouts */
+  .grid-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: minmax(200px, auto);
+    gap: 2rem;
+  }
+  
+  .grid-staggered {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .grid-staggered > :nth-child(2n) {
+    transform: translateY(2rem);
+  }
+  
+  /* Micro-interactions */
+  .micro-bounce {
+    @apply transition-transform duration-200;
+  }
+  
+  .micro-bounce:active {
+    transform: scale(0.95);
+  }
+  
+  .micro-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Typography Enhancements */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  /* Advanced Keyframes */
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(60px) scale(0.95);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0px);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
     }
     to {
       opacity: 1;
@@ -179,40 +408,104 @@ All colors MUST be HSL.
     }
   }
   
-  .hover-scale {
-    @apply transition-transform duration-300 hover:scale-105;
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8) rotate(-5deg);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
   }
   
-  .text-gradient {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary;
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
   
-  /* Professional Legal Typography Utilities */
-  .text-legal-formal {
-    @apply font-legal text-lg leading-relaxed tracking-wide;
+  @keyframes glow {
+    from {
+      box-shadow: var(--shadow-lg);
+    }
+    to {
+      box-shadow: var(--shadow-xl), var(--glow-gold);
+    }
   }
   
-  .heading-legal {
-    @apply font-heading font-bold tracking-tight text-foreground;
-    letter-spacing: -0.025em;
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
   
-  .subheading-legal {
-    @apply font-heading font-semibold tracking-wide text-muted-foreground uppercase;
-    letter-spacing: 0.1em;
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
   
-  .body-legal {
-    @apply font-body leading-relaxed text-muted-foreground;
-    line-height: 1.75;
+  /* Responsive Design Enhancements */
+  @media (max-width: 768px) {
+    .glass {
+      backdrop-filter: blur(var(--blur-sm));
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-4px);
+    }
   }
   
-  /* Enhanced professional spacing for legal content */
-  .legal-section {
-    @apply py-16 sm:py-20 lg:py-32;
+  /* Accessibility Enhancements */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-scale-in,
+    .animate-float,
+    .animate-glow {
+      animation: none;
+    }
+    
+    .hover-lift,
+    .hover-magnetic {
+      transform: none !important;
+    }
   }
   
-  .legal-container {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  /* Performance Optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 }
