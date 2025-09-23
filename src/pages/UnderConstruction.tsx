@@ -1,14 +1,12 @@
-import Layout from '../components/Layout';
 import { Button } from '@/components/ui/button';
 import { Mail } from 'lucide-react';
 
 const UnderConstruction = () => {
   return (
-    <Layout 
-      title="Under Construction - Gibb Lawyers"
-      description="Our website is under construction. We're working hard to improve your experience."
-    >
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8">
+    <>
+      <title>Under Construction - Gibb Lawyers</title>
+      <meta name="description" content="Our website is under construction. We're working hard to improve your experience." />
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8 bg-background text-foreground">
         <div className="text-center max-w-2xl mx-auto">
           {/* Logo */}
           <div className="mb-12">
@@ -49,7 +47,7 @@ const UnderConstruction = () => {
           </p>
         </footer>
       </div>
-    </Layout>
+    </>
   );
 };
 
