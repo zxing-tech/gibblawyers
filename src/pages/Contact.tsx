@@ -149,7 +149,7 @@ const Contact = () => {
             {offices.map((office, officeIndex) => (
               <div key={officeIndex} className="space-y-4 sm:space-y-6">
                 {office.addresses.map((location, locationIndex) => (
-                  <Card key={locationIndex} className="border border-border/50 hover:shadow-elegant transition-all duration-300">
+                  <Card key={locationIndex} className="h-full border border-border/50 hover:shadow-elegant transition-all duration-300">
                     <CardHeader className="pb-4 sm:pb-6">
                       <CardTitle className="text-xl sm:text-2xl text-foreground flex items-center gap-2">
                         <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
