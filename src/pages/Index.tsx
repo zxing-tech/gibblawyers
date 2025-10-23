@@ -101,7 +101,7 @@ const Index = () => {
       <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
         {/* Multi-Layer Gradient Overlay Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/10"></div>
-        <div className="absolute inset-0 bg-[url('/images/hero-gavel-books.jpg')] bg-cover bg-top opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/images/hero-gavel-books.jpg')] bg-cover bg-top opacity-30"></div>
         
         {/* Premium Overlay Gradients */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/40 to-background/60"></div>
