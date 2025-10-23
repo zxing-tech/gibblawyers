@@ -98,15 +98,14 @@ const Index = () => {
       description="Let Us Take Care of You Legally. Experience you need. Achievements you get."
     >
       {/* Hero Section - Awwwards Enhanced */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
         {/* Multi-Layer Gradient Overlay Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/10"></div>
-        <div className="absolute inset-0 bg-[url('/images/hero-gavel-books.jpg')] bg-cover bg-center opacity-3"></div>
+        <div className="absolute inset-0 bg-[url('/images/hero-gavel-books.jpg')] bg-cover bg-top opacity-20"></div>
         
         {/* Premium Overlay Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-accent/15 opacity-80"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background/30"></div>
-        <div className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-background/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/40 to-background/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background/70"></div>
         
         {/* Dynamic Animated Overlay */}
         <div className="absolute inset-0 opacity-60">
