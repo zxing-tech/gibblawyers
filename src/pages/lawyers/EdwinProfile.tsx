@@ -133,7 +133,7 @@ const EdwinProfile = () => {
                   <Card className="border border-primary/20 bg-primary/5">
                     <CardContent className="p-6 text-center">
                       <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
-                      <div className="text-2xl font-bold text-primary mb-1">28+</div>
+                      <div className="text-2xl font-bold text-primary mb-1">{new Date().getFullYear() - 1997}+</div>
                       <div className="text-sm text-muted-foreground">Years Experience</div>
                     </CardContent>
                   </Card>
