@@ -119,7 +119,12 @@ export class EmailTestService {
 }
 
 // Export for console testing
-(window as any).EmailTestService = EmailTestService;
+declare global {
+  interface Window {
+    EmailTestService: typeof EmailTestService;
+  }
+}
+window.EmailTestService = EmailTestService;
 
 // Instructions for manual testing
 console.log(`
