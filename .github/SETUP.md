@@ -96,16 +96,6 @@ One workflow file with 3 jobs that run conditionally:
 - Add `SUPABASE_ACCESS_TOKEN` secret (see above)
 - Add `SUPABASE_PROJECT_REF` secret (see above)
 
-### Dependabot (`dependabot.yml`)
-**Trigger**: Weekly (Mondays at 09:00) for npm, monthly for GitHub Actions
-
-**What it does**:
-- Checks for dependency updates
-- Creates PRs with updates
-- Labels PRs appropriately
-
-**No setup required** - works automatically
-
 ## How to Add Secrets
 
 1. Go to your GitHub repository

@@ -179,12 +179,6 @@ Deploys Supabase resources when `supabase/**` files change on `main`:
   - `SUPABASE_ACCESS_TOKEN`: Supabase access token
   - `SUPABASE_PROJECT_REF`: Project reference (fcneqcsiixednrukbpxe)
 
-#### Dependabot (`.github/dependabot.yml`)
-Automated dependency updates:
-- Weekly npm dependency updates (Mondays at 09:00)
-- Monthly GitHub Actions updates
-- Creates labeled PRs for review
-
 **Why one file?** Simpler to manage and maintain. Jobs run conditionally based on branch and file changes.
 
 ### Deployment Options

@@ -148,7 +148,7 @@ const Index = () => {
               <div className="space-y-4 sm:space-y-6 animate-scale-in" style={{animationDelay: '0.4s'}}>
                 <h1 className="heading-hero text-4xl sm:text-6xl lg:text-8xl xl:text-9xl leading-[0.85] tracking-tight">
                   <span className="block text-foreground mb-4 sm:mb-6 hover-magnetic will-change-transform">
-                    <span className="text-balance">Experience you need Testing.</span>
+                    <span className="text-balance">Experience you need.</span>
                   </span>
                   <span className="block text-gradient font-black hover-magnetic will-change-transform">
                     <span className="text-balance">Achievements you get.</span>
