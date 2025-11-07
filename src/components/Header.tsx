@@ -19,7 +19,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="glass-intense sticky top-0 z-50 border-b border-primary/20">
+    <header className="sticky top-0 z-50 border-b border-primary/10 bg-background/50 backdrop-blur-xl supports-[backdrop-filter]:bg-background/30 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Enhanced Logo */}

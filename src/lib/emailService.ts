@@ -1,9 +1,11 @@
 import { supabase } from '@/integrations/supabase/client';
+import { WHATSAPP_NUMBER_DISPLAY } from '@/constants/contact';
 
 export interface ContactFormData {
   name: string;
   email: string;
   phone?: string;
+  subject?: string;
   message: string;
 }
 
@@ -26,6 +28,7 @@ export class EmailService {
             name: data.name,
             email: data.email,
             phone: data.phone || null,
+            subject: data.subject || null,
             message: data.message,
             created_at: new Date().toISOString(),
           }
@@ -59,7 +62,7 @@ export class EmailService {
   /**
    * Send acknowledgment email to the client
    */
-  static async sendClientAcknowledgment(clientEmail: string, clientName: string): Promise<EmailNotificationResult> {
+  static async sendClientAcknowledgment(clientEmail: string, clientName: string, subject?: string): Promise<EmailNotificationResult> {
     try {
       const { data: result, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
@@ -67,6 +70,7 @@ export class EmailService {
           record: {
             email: clientEmail,
             name: clientName,
+            subject: subject || null,
             created_at: new Date().toISOString(),
           }
         }
@@ -106,6 +110,7 @@ New Contact Form Submission - Gibb & Co Lawyers
 Name: ${data.name}
 Email: ${data.email}
 ${data.phone ? `Phone: ${data.phone}` : ''}
+${data.subject ? `Subject: ${data.subject}` : ''}
 Submitted: ${new Date().toLocaleString()}
 
 Message:
@@ -120,19 +125,18 @@ Please respond to the client within 24 hours to maintain our professional servic
   /**
    * Format acknowledgment email for client
    */
-  static formatClientAcknowledgment(clientName: string): string {
+  static formatClientAcknowledgment(clientName: string, subject?: string): string {
     return `
 Dear ${clientName},
 
 Thank you for contacting Gibb & Co Lawyers. We have received your inquiry and appreciate you taking the time to reach out to us.
 
-Your message has been forwarded to our legal team, and we will review it carefully. One of our experienced lawyers will respond to your inquiry within 24 hours during business days.
-
+${subject ? `Subject: ${subject}\n\n` : ''}Your message has been forwarded to our legal team, and we will review it carefully. One of our experienced lawyers will respond to your inquiry within 24 hours during business days.
 If your matter is urgent, please don't hesitate to call us directly at:
 - Ipoh Office: +605 547 1313
 - Teluk Intan Office: +605 623 1713
 
-For immediate assistance, you can also reach us via WhatsApp at +6012 477 5779.
+For immediate assistance, you can also reach us via WhatsApp at ${WHATSAPP_NUMBER_DISPLAY}.
 
 We look forward to assisting you with your legal needs.
 

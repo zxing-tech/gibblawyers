@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 interface ServicePageProps {
   title: string;
@@ -158,30 +159,19 @@ const ServicePageTemplate = ({
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-              <Button 
-                asChild 
-                size="lg" 
-                className="text-base px-6 sm:px-8 py-3 sm:py-4 font-semibold tracking-wide min-h-[44px] w-full sm:w-auto"
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center text-base px-6 sm:px-8 py-3 sm:py-4 font-semibold tracking-wide min-h-[44px] w-full sm:w-auto rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
               >
-                <Link to="/contact">
-                  SCHEDULE CONSULTATION
-                </Link>
-              </Button>
-              <Button 
-                asChild 
-                variant="outline" 
-                size="lg" 
+                Schedule a Consultation
+              </Link>
+              <WhatsAppButton
+                size="lg"
+                variant="outline"
+                label="WHATSAPP US"
                 className="text-base px-6 sm:px-8 py-3 sm:py-4 font-semibold tracking-wide min-h-[44px] w-full sm:w-auto"
-              >
-                <a
-                  href="https://api.whatsapp.com/send/?phone=60124775779&text=Hi+there&app_absent=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WHATSAPP US
-                </a>
-              </Button>
+              />
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import SkipLink from './SkipLink';
@@ -10,16 +10,16 @@ interface LayoutProps {
 }
 
 const Layout = ({ children, title = "Gibb Lawyers", description = "Experience you need. Achievements you get." }: LayoutProps) => {
-  // Set document title
-  if (typeof document !== 'undefined') {
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+
     document.title = title;
-    
-    // Update meta description
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', description);
     }
-  }
+  }, [title, description]);
 
   return (
     <div className="min-h-screen flex flex-col">

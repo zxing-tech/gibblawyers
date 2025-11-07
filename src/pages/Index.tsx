@@ -97,128 +97,110 @@ const Index = () => {
       title="Gibb Lawyers - Experience you need. Achievements you get."
       description="Let Us Take Care of You Legally. Experience you need. Achievements you get."
     >
-      {/* Hero Section - Awwwards Enhanced */}
-      <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
-        {/* Multi-Layer Gradient Overlay Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/10"></div>
-        <div className="absolute inset-0 bg-[url('/images/hero-gavel-books.jpg')] bg-cover bg-top opacity-65"></div>
-        
-        {/* Premium Overlay Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/40 to-background/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background/70"></div>
-        
-        {/* Dynamic Animated Overlay */}
-        <div className="absolute inset-0 opacity-60">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-accent/20 to-primary/10 animate-gradient-shift"></div>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-[url('/images/hero-gavel-books.jpg')] bg-cover bg-center md:bg-top"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/45 to-background/75 md:from-background/50 md:via-background/30 md:to-background/65"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-background/35 to-background/55 md:from-background/40 md:via-background/25 md:to-background/45"></div>
+
+        {/* Accent shapes (hidden on small screens) */}
+        <div className="pointer-events-none hidden md:block">
+          <div className="absolute top-24 left-10 w-28 h-28 rounded-full bg-primary/10 blur-2xl"></div>
+          <div className="absolute bottom-32 right-12 w-24 h-24 rounded-full bg-accent/10 blur-2xl"></div>
         </div>
-        
-        {/* Animated Geometric Shapes */}
-        <div className="absolute top-20 left-10 w-32 h-32 shape-organic bg-gradient-to-br from-primary/20 to-accent/10 animate-float blur-sm"></div>
-        <div className="absolute bottom-40 right-20 w-24 h-24 shape-diamond bg-gradient-to-br from-accent/30 to-primary/20 animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 right-10 w-16 h-16 shape-hexagon bg-gradient-to-br from-primary/15 to-transparent animate-float" style={{animationDelay: '4s'}}></div>
-        
-        {/* Glass Morphism Overlay */}
-        <div className="absolute inset-0 glass opacity-60"></div>
-        
-        <div className="relative w-full z-10">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
-            <div className="max-w-6xl mx-auto text-center space-y-8 sm:space-y-12">
-              
-              {/* Enhanced Heritage Badge */}
-              <div className="flex items-center justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-12 animate-fade-in">
-                <div className="w-12 sm:w-16 lg:w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent animate-glow"></div>
-                <div className="glass-intense px-6 py-3 rounded-full shadow-2xl hover-lift">
-                  <div className="flex items-center space-x-3">
-                    <Award className="h-5 w-5 text-primary animate-pulse" />
-                    <span className="text-sm sm:text-base lg:text-lg font-heading font-semibold text-gradient tracking-wider uppercase">EST. 1892</span>
+
+        <div className="relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
+            <div className="max-w-6xl mx-auto flex flex-col gap-12 md:flex-row md:items-end">
+              <div className="w-full max-w-3xl space-y-6 sm:space-y-8">
+                <div className="inline-flex items-center gap-3 rounded-full bg-background/70 px-4 py-2 shadow-lg ring-1 ring-primary/10">
+                  <Award className="h-4 w-4 text-primary" />
+                  <span className="text-xs font-semibold tracking-[0.2em] text-primary uppercase">Established 1892</span>
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-balance text-foreground">
+                  Guiding Malaysian businesses & families with trusted legal expertise.
+                </h1>
+
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl text-pretty">
+                  From corporate strategy to personal legal matters, our senior partners bring over 95 years of combined experience to protect what matters most to you.
+                </p>
+
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full sm:w-auto min-h-[52px] px-6 sm:px-8 font-semibold text-base sm:text-lg"
+                  >
+                    <Link to="/contact" className="flex items-center justify-center gap-3">
+                      <Calendar className="h-5 w-5" />
+                      Schedule a Consultation
+                    </Link>
+                  </Button>
+
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto min-h-[52px] px-6 sm:px-8 font-semibold text-base sm:text-lg border-primary/30"
+                  >
+                    <Link to="/services" className="flex items-center justify-center gap-3">
+                      <Scale className="h-5 w-5" />
+                      Explore Services
+                    </Link>
+                  </Button>
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 pt-6 sm:grid-cols-3 sm:border-t sm:border-border/40 sm:pt-6">
+                  <div className="flex items-center gap-3">
+                    <div className="rounded-full bg-primary/10 p-2">
+                      <Shield className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      <p className="font-semibold text-foreground">95+ Years</p>
+                      <p>Combined partner experience</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="rounded-full bg-primary/10 p-2">
+                      <Users className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      <p className="font-semibold text-foreground">Client-first</p>
+                      <p>Personalised legal strategies</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="rounded-full bg-primary/10 p-2">
+                      <Trophy className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      <p className="font-semibold text-foreground">Heritage</p>
+                      <p>Serving Malaysia since 1892</p>
+                    </div>
                   </div>
                 </div>
-                <div className="w-12 sm:w-16 lg:w-20 h-px bg-gradient-to-r from-transparent via-primary to-transparent animate-glow"></div>
               </div>
-              
-              {/* Enhanced Tagline */}
-              <div className="animate-slide-up" style={{animationDelay: '0.2s'}}>
-                <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground font-body font-medium tracking-wide backdrop-blur-sm">
-                  Let Us Take Care of You 
-                  <span className="text-primary font-semibold">Legally</span>
-                </p>
-              </div>
-              
-              {/* Revolutionary Main Heading */}
-              <div className="space-y-4 sm:space-y-6 animate-scale-in" style={{animationDelay: '0.4s'}}>
-                <h1 className="heading-hero text-4xl sm:text-6xl lg:text-8xl xl:text-9xl leading-[0.85] tracking-tight">
-                  <span className="block text-foreground mb-4 sm:mb-6 hover-magnetic will-change-transform">
-                    <span className="text-balance">Experience you need.</span>
-                  </span>
-                  <span className="block text-gradient font-black hover-magnetic will-change-transform">
-                    <span className="text-balance">Achievements you get.</span>
-                  </span>
-                </h1>
-              </div>
-              
-              {/* Advanced CTA Buttons */}
-              <div className="pt-8 sm:pt-12 flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center animate-fade-in" style={{animationDelay: '0.6s'}}>
-                <Button 
-                  asChild 
-                  size="lg" 
-                  className="bg-primary/90 backdrop-blur-sm text-lg px-10 py-6 font-bold tracking-wide min-h-[60px] w-full sm:w-auto hover-lift micro-bounce group relative overflow-hidden hover:bg-primary"
-                >
-                  <Link to="/contact" className="flex items-center gap-3 relative z-10">
-                    <Calendar className="h-6 w-6 group-hover:rotate-12 transition-transform duration-300" />
-                    <span className="relative">
-                      SCHEDULE CONSULTATION
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded"></div>
-                    </span>
-                  </Link>
-                </Button>
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  size="lg" 
-                  className="glass text-lg px-10 py-6 font-bold tracking-wide min-h-[60px] w-full sm:w-auto border-2 border-primary/30 hover-lift micro-bounce group relative overflow-hidden"
-                >
-                  <Link to="/services" className="flex items-center gap-3 relative z-10">
-                    <Scale className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
-                    <span className="relative">
-                      EXPLORE SERVICES
-                      <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded"></div>
-                    </span>
-                  </Link>
-                </Button>
-              </div>
-              
             </div>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Features Bar */}
-      <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/3 via-accent/5 to-primary/3"></div>
-        <div className="absolute inset-0">
-          <div className="w-full h-full opacity-20">
-            <div className="absolute top-0 left-1/4 w-2 h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-pulse"></div>
-            <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-transparent via-accent/30 to-transparent animate-pulse" style={{animationDelay: '1s'}}></div>
-          </div>
-        </div>
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+      {/* Capability Highlights */}
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 sm:gap-10 md:grid-cols-3">
             {features.map((feature, index) => (
-              <div key={index} className="text-center group animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
-                <div className="relative mb-6">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto glass-intense rounded-3xl flex items-center justify-center hover-lift group-hover:animate-glow transition-all duration-700">
-                    <feature.icon className="h-10 w-10 sm:h-12 sm:w-12 text-primary group-hover:scale-110 transition-transform duration-500" />
-                  </div>
-                  {/* Floating particles */}
-                  <div className="absolute -top-2 -right-2 w-3 h-3 bg-accent/50 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-all duration-300"></div>
-                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-primary/40 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-300" style={{animationDelay: '0.2s'}}></div>
+              <div
+                key={feature.title}
+                className="flex flex-col items-center rounded-2xl bg-background/80 p-6 shadow-lg ring-1 ring-border/40 transition hover:translate-y-[-4px] hover:shadow-xl md:items-start"
+              >
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <feature.icon className="h-6 w-6" />
                 </div>
-                <h3 className="heading-section text-xl sm:text-2xl font-bold text-foreground mb-3 group-hover:text-gradient transition-all duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed font-body max-w-sm mx-auto text-pretty">
+                <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{feature.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground sm:text-base">
                   {feature.description}
                 </p>
               </div>
@@ -227,142 +209,82 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Revolutionary Services Section */}
-      <section className="py-20 sm:py-28 lg:py-36 relative overflow-hidden">
-        {/* Dynamic Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/2 to-background"></div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-0 w-80 h-80 bg-gradient-to-bl from-accent/8 to-transparent rounded-full blur-2xl animate-float" style={{animationDelay: '3s'}}></div>
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-            <div className="animate-slide-up">
-              <div className="inline-block glass px-6 py-2 rounded-full mb-6">
-                <span className="text-sm font-medium text-primary uppercase tracking-wider">Our Expertise</span>
-              </div>
-              <h2 className="heading-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-foreground mb-6 text-balance">
-                How We Can 
-                <span className="text-primary">Help</span>
-              </h2>
-              <p className="text-xl sm:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-body text-pretty">
-                Explore our expertise and discover the right legal solution for your needs
-              </p>
-            </div>
+      {/* Services Overview */}
+      <section className="py-20 sm:py-24 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
+            <span className="mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+              Our Expertise
+            </span>
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+              Comprehensive legal support for every stage of your journey
+            </h2>
+            <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+              Explore our core practice areas and discover the right team to partner with on your next matter.
+            </p>
           </div>
-          
-          <div className="grid-staggered max-w-7xl mx-auto">
-            {services.map((service, index) => (
-              <div key={index} className="group animate-scale-in" style={{animationDelay: `${index * 0.2}s`}}>
-                <Link to={service.link} className="block h-full">
-                  <div className="glass-intense rounded-3xl p-8 sm:p-10 lg:p-12 h-full hover-lift transition-all duration-700 group relative overflow-hidden">
-                    {/* Hover Background Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
-                    
-                    <div className="relative z-10 text-center space-y-8">
-                      <div className="relative">
-                        <div className={`w-24 h-24 sm:w-28 sm:h-28 mx-auto bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-2xl ${service.color}`}>
-                          <service.icon className="h-12 w-12 sm:h-14 sm:w-14 group-hover:scale-110 transition-transform duration-500" />
-                        </div>
-                        
-                        {/* Animated Accent Elements */}
-                        <div className="absolute -top-3 -right-3 w-8 h-8 bg-primary/30 rounded-full opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500"></div>
-                        <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-accent/40 shape-diamond opacity-0 group-hover:opacity-100 group-hover:rotate-45 transition-all duration-700"></div>
-                      </div>
-                      
-                      <div className="space-y-4">
-                        <p className="text-sm sm:text-base text-muted-foreground uppercase tracking-wider font-medium opacity-80">
-                          {service.subtitle}
-                        </p>
-                        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground group-hover:text-primary transition-all duration-500">
-                          {service.title}
-                        </h3>
-                        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed text-pretty">
-                          {service.description}
-                        </p>
-                      </div>
-                      
-                      <div className="flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <div className="flex items-center gap-2 glass px-4 py-2 rounded-full">
-                          <span className="text-sm font-medium">Explore</span>
-                          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
+
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {services.map((service) => (
+              <Link
+                key={service.title}
+                to={service.link}
+                className="group flex h-full flex-col rounded-3xl bg-background/90 p-8 shadow-lg ring-1 ring-border/30 transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <service.icon className="h-6 w-6" />
+                </div>
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+                  {service.subtitle}
+                </p>
+                <h3 className="mt-3 text-2xl font-bold text-foreground sm:text-3xl">
+                  {service.title}
+                </h3>
+                <p className="mt-4 text-sm text-muted-foreground sm:text-base">
+                  {service.description}
+                </p>
+                <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                  Explore service
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Premium Testimonials Section */}
-      <section className="py-20 sm:py-28 lg:py-36 relative overflow-hidden">
-        {/* Advanced Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/5"></div>
-        
-        {/* Geometric Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          <div className="absolute top-1/4 left-10 w-64 h-64 shape-hexagon bg-gradient-to-br from-primary/10 to-transparent blur-xl animate-float"></div>
-          <div className="absolute bottom-1/3 right-20 w-48 h-48 shape-organic bg-gradient-to-bl from-accent/15 to-transparent blur-lg animate-float" style={{animationDelay: '2s'}}></div>
-        </div>
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16 sm:mb-20">
-            <div className="animate-slide-up">
-              <div className="glass px-8 py-3 rounded-full inline-block mb-8">
-                <span className="text-sm font-bold text-primary uppercase tracking-wider">Client Testimonials</span>
-              </div>
-              <h2 className="heading-display text-4xl sm:text-5xl lg:text-6xl font-black mb-8">
-                What Our 
-                <span className="text-primary">Clients</span> Say
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-                Over 130 years of client trust and successful legal outcomes
-              </p>
-            </div>
+      {/* Testimonials */}
+      <section className="py-20 sm:py-24 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
+            <span className="mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+              Client Voices
+            </span>
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+              Trusted by clients across Malaysia
+            </h2>
+            <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+              Hear from organisations and individuals who have relied on Gibb &amp; Co for decisive legal guidance.
+            </p>
           </div>
-          
-          <div className="grid-masonry max-w-7xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="animate-scale-in hover-lift" style={{animationDelay: `${index * 0.15}s`}}>
-                <div className="glass-intense rounded-3xl p-8 lg:p-10 h-full group relative overflow-hidden">
-                  {/* Quote Background */}
-                  <div className="absolute top-4 right-4 opacity-5">
-                    <Quote className="h-24 w-24 text-primary" />
-                  </div>
-                  
-                  <div className="relative z-10">
-                    <div className="mb-6">
-                      <Quote className="h-8 w-8 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-                      <p className="text-muted-foreground text-lg leading-relaxed italic text-pretty group-hover:text-foreground transition-colors duration-300">
-                        "{testimonial.quote}"
-                      </p>
-                    </div>
-                    
-                    <div className="border-t border-border/30 pt-6">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="font-bold text-foreground text-lg group-hover:text-primary transition-all duration-300">
-                            {testimonial.author}
-                          </p>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            {testimonial.position}
-                          </p>
-                        </div>
-                        <div className="flex space-x-1">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star 
-                              key={i} 
-                              className="h-5 w-5 fill-primary text-primary group-hover:scale-110 transition-transform duration-300" 
-                              style={{animationDelay: `${i * 0.1}s`}}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
+
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.author}
+                className="flex h-full flex-col justify-between rounded-3xl bg-background/90 p-8 shadow-lg ring-1 ring-border/30"
+              >
+                <Quote className="mb-4 h-8 w-8 text-primary" />
+                <p className="flex-1 text-sm italic text-muted-foreground sm:text-base">
+                  “{testimonial.quote}”
+                </p>
+                <div className="mt-6 border-t border-border/30 pt-4">
+                  <p className="text-base font-semibold text-foreground sm:text-lg">{testimonial.author}</p>
+                  <p className="text-xs text-muted-foreground sm:text-sm">{testimonial.position}</p>
+                  <div className="mt-3 flex items-center gap-1 text-primary">
+                    {[...Array(testimonial.rating)].map((_, index) => (
+                      <Star key={index} className="h-4 w-4 fill-current" />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -371,31 +293,33 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Awards & Recognition Section */}
-      <section className="py-16 sm:py-24 lg:py-32">
+      {/* Recognition */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-block px-6 py-2 bg-accent/10 rounded-full border border-accent/20 mb-6">
-              <span className="text-sm font-medium text-accent">RECOGNITION & AWARDS</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-accent mb-6">
-              Legal Excellence Recognized
+          <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
+            <span className="mb-4 inline-flex items-center rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+              Recognition
+            </span>
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+              A legacy of excellence acknowledged by the industry
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our commitment to legal excellence has been recognized throughout our 130+ year history
+            <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+              Awards and accolades that reflect our commitment to integrity, service, and results.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {awards.map((award, index) => (
-              <Card key={index} className="border border-border/50 bg-gradient-to-br from-card via-card to-primary/5 hover:shadow-xl transition-all duration-500 text-center group">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <award.icon className="h-8 w-8 text-primary" />
+
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+            {awards.map((award) => (
+              <Card key={award.title} className="h-full border border-border/40 bg-background/90 shadow-md">
+                <CardContent className="flex h-full flex-col items-center text-center p-8">
+                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <award.icon className="h-7 w-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">{award.title}</h3>
-                  <p className="text-sm font-medium text-primary mb-3">{award.year}</p>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{award.description}</p>
+                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{award.title}</h3>
+                  <p className="mt-2 text-sm font-medium text-primary sm:text-base">{award.year}</p>
+                  <p className="mt-4 text-sm text-muted-foreground sm:text-base">
+                    {award.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -403,42 +327,37 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-gibb-gray-50 via-background to-primary/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/office-interior.jpg')] bg-cover bg-center opacity-3"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto text-center space-y-8 sm:space-y-12">
-            <div className="space-y-6 sm:space-y-8">
-              <div className="w-24 sm:w-32 h-px bg-gradient-to-r from-transparent via-primary to-transparent mx-auto"></div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
-                Our Philosophy
-              </h2>
-              <p className="text-xl sm:text-2xl lg:text-3xl text-primary font-medium leading-relaxed">
-                We invest in our people to serve our stakeholders better.
-              </p>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-4 sm:pt-8">
-              <Button 
-                asChild 
-                size="lg" 
-                className="text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 font-semibold tracking-wide min-h-[52px] w-full sm:w-auto shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+      {/* Philosophy */}
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl rounded-3xl bg-background/90 p-10 text-center shadow-lg ring-1 ring-border/30">
+            <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Our Philosophy</h2>
+            <p className="mt-4 text-lg font-medium text-primary sm:text-xl">
+              We invest in our people to serve our stakeholders better.
+            </p>
+            <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+              By combining heritage values with modern practice, we ensure every client receives attentive, solutions-driven support tailored to their goals.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <Button
+                asChild
+                size="lg"
+                className="w-full sm:w-auto min-h-[52px] px-6 sm:px-8 font-semibold"
               >
-                <Link to="/contact" className="flex items-center gap-2">
+                <Link to="/contact" className="flex items-center justify-center gap-2">
                   <Calendar className="h-5 w-5" />
-                  TALK TO US
+                  Talk to us
                 </Link>
               </Button>
-              <Button 
-                asChild 
-                variant="outline" 
-                size="lg" 
-                className="text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 font-semibold tracking-wide min-h-[52px] w-full sm:w-auto border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto min-h-[52px] px-6 sm:px-8 font-semibold border-primary/30"
               >
-                <Link to="/services" className="flex items-center gap-2">
+                <Link to="/services" className="flex items-center justify-center gap-2">
                   <Award className="h-5 w-5" />
-                  OUR EXPERTISE
+                  Our expertise
                 </Link>
               </Button>
             </div>

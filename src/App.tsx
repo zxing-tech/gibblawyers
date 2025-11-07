@@ -17,6 +17,7 @@ import Disclaimer from "./pages/Disclaimer";
 import FAQ from "./pages/FAQ";
 import History from "./pages/History";
 import UnderConstruction from "./pages/UnderConstruction";
+import ThankYou from "./pages/ThankYou";
 
 // Lawyer profile pages
 import ZorinahProfile from "./pages/lawyers/ZorinahProfile";
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/history" element={<History />} />
           <Route path="/under-construction" element={<UnderConstruction />} />
+          <Route path="/thank-you" element={<ThankYou />} />
           
           {/* Lawyer profile pages */}
           <Route path="/lawyers/zorinah-mohd-sobri" element={<ZorinahProfile />} />

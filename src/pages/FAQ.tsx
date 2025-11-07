@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { HelpCircle, Scale, Clock, DollarSign, FileText, Users } from 'lucide-react';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const FAQ = () => {
   const faqCategories = [
@@ -125,18 +126,24 @@ const FAQ = () => {
       description="Find answers to common questions about our legal services, consultation process, fees, and more at Gibb & Co."
     >
       {/* Header Section */}
-      <section className="relative bg-gradient-to-br from-secondary/30 to-background py-12 sm:py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6 sm:mb-8">
-              <div className="w-16 sm:w-20 h-px bg-primary/60"></div>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/faq-hero.jpg')] bg-cover bg-center md:bg-top"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/45 to-background/75 md:from-background/50 md:via-background/30 md:to-background/65"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-background/35 to-background/55 md:from-background/40 md:via-background/25 md:to-background/45"></div>
+
+        <div className="relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+            <div className="mx-auto max-w-3xl text-center space-y-6 sm:space-y-8">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                FAQ
+              </span>
+              <h1 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+                Answers to the questions clients ask most often
+              </h1>
+              <p className="text-base text-muted-foreground sm:text-lg">
+                Learn how we work, what to expect from your first consultation, and how we approach timelines, fees, and confidentiality.
+              </p>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 sm:mb-8 leading-tight">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Find answers to common questions about our legal services, consultation process, and how we can help with your legal needs.
-            </p>
           </div>
         </div>
       </section>
@@ -144,27 +151,27 @@ const FAQ = () => {
       {/* FAQ Content */}
       <section className="py-12 sm:py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="mx-auto max-w-4xl space-y-8">
             {faqCategories.map((category, categoryIndex) => (
-              <Card key={categoryIndex} className="border border-border/50">
-                <CardHeader>
-                  <CardTitle className="flex items-center text-xl sm:text-2xl text-foreground">
-                    <category.icon className="h-6 w-6 text-primary mr-3" />
+              <Card key={categoryIndex} className="rounded-3xl border border-border/40 bg-background/95 shadow-lg">
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex items-center gap-3 text-lg font-semibold text-foreground sm:text-2xl">
+                    <category.icon className="h-5 w-5 text-primary sm:h-6 sm:w-6" />
                     {category.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="pt-0">
                   <Accordion type="single" collapsible className="space-y-2">
                     {category.questions.map((faq, faqIndex) => (
-                      <AccordionItem 
-                        key={faqIndex} 
+                      <AccordionItem
+                        key={faqIndex}
                         value={`${categoryIndex}-${faqIndex}`}
-                        className="border border-border/30 rounded-lg px-4"
+                        className="overflow-hidden rounded-2xl border border-border/30"
                       >
-                        <AccordionTrigger className="text-left hover:no-underline py-4">
-                          <span className="font-medium text-foreground">{faq.q}</span>
+                        <AccordionTrigger className="px-4 py-3 text-left text-sm font-medium text-foreground hover:no-underline sm:text-base">
+                          {faq.q}
                         </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                        <AccordionContent className="px-4 pb-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                           {faq.a}
                         </AccordionContent>
                       </AccordionItem>
@@ -178,40 +185,30 @@ const FAQ = () => {
       </section>
 
       {/* Still Have Questions Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-r from-primary/5 via-transparent to-accent/5">
+      <section className="py-12 sm:py-16 lg:py-20 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Card className="border border-border/50 bg-card/50 backdrop-blur-sm">
+          <div className="mx-auto max-w-4xl text-center">
+            <Card className="rounded-3xl border border-border/40 bg-background/95 shadow-lg">
               <CardContent className="p-8 sm:p-12">
-                <div className="flex justify-center mb-6">
-                  <Users className="h-12 w-12 text-primary" />
+                <div className="mb-6 flex justify-center">
+                  <Users className="h-10 w-10 text-primary" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                  Still Have Questions?
+                <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                  Still have questions?
                 </h2>
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  If you don't see your question answered here, we're here to help. Contact us for personalized legal advice and consultation.
+                <p className="mt-4 text-sm text-muted-foreground sm:text-base">
+                  Reach out for personalised advice. We’ll align you with the right partner to discuss your matter.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button asChild size="lg" className="min-h-[52px] px-8 py-4 font-semibold">
-                    <Link to="/contact">
-                      Schedule Consultation
-                    </Link>
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+                  <Button asChild size="lg" className="min-h-[52px] px-6 sm:px-8 font-semibold">
+                    <Link to="/contact">Schedule consultation</Link>
                   </Button>
-                  <Button 
-                    asChild
-                    variant="outline" 
-                    size="lg" 
-                    className="min-h-[52px] px-8 py-4 font-semibold border-2"
-                  >
-                    <a
-                      href="https://api.whatsapp.com/send/?phone=60124775779&text=Hi+there&app_absent=0"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      WhatsApp Us
-                    </a>
-                  </Button>
+                  <WhatsAppButton
+                    variant="outline"
+                    size="lg"
+                    label="WhatsApp Us"
+                    className="min-h-[52px] px-6 sm:px-8 font-semibold"
+                  />
                 </div>
               </CardContent>
             </Card>

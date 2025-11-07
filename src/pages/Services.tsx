@@ -40,43 +40,24 @@ const Services = () => {
       title="Our Legal Services - Gibb Lawyers"
       description="Comprehensive legal services with over 130 years of experience. We provide expert solutions across multiple areas of law."
     >
-      <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5">
+      <div className="min-h-screen bg-background">
         {/* Header Section */}
-        <section className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10"></div>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-            {/* Hero Image */}
-            <div className="mb-12 lg:mb-16">
-              <div className="relative max-w-6xl mx-auto">
-                <img 
-                  src="/images/services-hero.jpg" 
-                  alt="Our Legal Services - Professional team meeting" 
-                  className="w-full h-56 sm:h-72 lg:h-96 object-cover rounded-2xl shadow-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent rounded-2xl"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <div className="inline-block px-6 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-sm mb-6">
-                      <span className="text-sm font-medium">EST. 1892</span>
-                    </div>
-                    <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 leading-tight">
-                      Expert Legal Services
-                    </h1>
-                    <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto">
-                      130+ Years of Legal Excellence
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center max-w-5xl mx-auto">
-              <div className="space-y-6">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground leading-tight">
-                  Client-Partner Relationship Excellence
-                </h2>
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  We listen with compassion to understand our clients, their business, and corporate culture to better equip them for ever-evolving complex environments while providing winning solutions and mitigating risks.
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/images/services-hero.jpg')] bg-cover bg-center md:bg-top"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/45 to-background/75 md:from-background/50 md:via-background/30 md:to-background/65"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-background/35 to-background/55 md:from-background/40 md:via-background/25 md:to-background/45"></div>
+
+          <div className="relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+              <div className="mx-auto max-w-3xl text-center space-y-6 sm:space-y-8">
+                <span className="inline-flex items-center justify-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                  Our Services
+                </span>
+                <h1 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+                  Specialist legal counsel across corporate, commercial, and personal matters
+                </h1>
+                <p className="text-base text-muted-foreground sm:text-lg">
+                  For over 130 years, we’ve partnered with organisations and families to navigate complex legal landscapes with clarity, strategy, and care.
                 </p>
               </div>
             </div>
@@ -84,44 +65,40 @@ const Services = () => {
         </section>
 
         {/* Services Section */}
-        <section className="py-20 sm:py-24 lg:py-32">
+        <section className="py-20 sm:py-24 lg:py-28">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <div className="inline-block px-6 py-2 bg-primary/10 rounded-full border border-primary/20 mb-6">
-                <span className="text-sm font-medium text-primary">LEGAL EXPERTISE</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                Our Legal Services
+            <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
+              <span className="mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                Legal Expertise
+              </span>
+              <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+                Tailored solutions across Malaysia’s key legal practice areas
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Comprehensive legal solutions across multiple areas of law with decades of proven expertise
+              <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+                Explore the core services our partners lead, with dedicated teams supporting each specialty.
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {services.map((service, index) => (
+
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
+              {services.map((service) => (
                 <Link
-                  key={index}
+                  key={service.name}
                   to={service.url}
-                  className="group block animate-fade-in hover-scale"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="group flex h-full flex-col rounded-3xl bg-background/90 p-8 shadow-lg ring-1 ring-border/30 transition hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <Card className="h-full hover:shadow-2xl hover:border-primary/30 transition-all duration-500 border border-border/50 bg-card/50 backdrop-blur-sm group-hover:bg-card">
-                    <CardContent className="p-6 flex items-center space-x-4 min-h-[100px]">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <service.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div className="flex-1">
-                        <span className="font-semibold text-sm sm:text-base text-foreground group-hover:text-primary transition-colors leading-tight block">
-                          {service.name}
-                        </span>
-                        <div className="flex items-center mt-2">
-                          <span className="text-xs text-muted-foreground group-hover:text-primary transition-colors">Learn more</span>
-                          <ArrowRight className="h-3 w-3 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all ml-1" />
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <service.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground sm:text-2xl">
+                    {service.name}
+                  </h3>
+                  <p className="mt-4 text-sm text-muted-foreground sm:text-base flex-1">
+                    Strategic advice and representation guided by senior partners who specialise in this field.
+                  </p>
+                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                    Learn more
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </div>
                 </Link>
               ))}
             </div>
@@ -129,155 +106,136 @@ const Services = () => {
         </section>
 
         {/* Training Section */}
-        <section className="py-20 sm:py-24 lg:py-32 bg-gradient-to-r from-accent/5 via-transparent to-primary/5">
+        <section className="py-20 sm:py-24 lg:py-28 bg-muted/20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <div className="inline-block px-6 py-2 bg-accent/10 rounded-full border border-accent/20 mb-6">
-                  <span className="text-sm font-medium text-accent">KNOWLEDGE TRANSFER</span>
-                </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-accent mb-6">
-                  Professional Training
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Empowering organizations with specialized legal knowledge and practical insights
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                <Card className="border border-border/50 backdrop-blur-sm bg-card/50 shadow-xl">
-                  <CardHeader className="pb-6">
-                    <CardTitle className="text-2xl lg:text-3xl text-foreground flex items-center">
-                      <Award className="w-8 h-8 text-primary mr-3" />
-                      Training Excellence
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-base text-muted-foreground leading-relaxed mb-6">
-                      Training is an integral part of our firm's services. We believe in better equipping our clients in managing their organizations, advising and addressing operational issues.
-                    </p>
-                    <p className="text-base text-muted-foreground leading-relaxed">
-                      Over the years, we have conducted specialized training for clients across Insurance, Employment, Banking & Commercial Law, and Construction Law.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border border-border/50 backdrop-blur-sm bg-card/50 shadow-xl">
-                  <CardHeader className="pb-6">
-                    <CardTitle className="text-2xl lg:text-3xl text-foreground flex items-center">
-                      <Users className="w-8 h-8 text-accent mr-3" />
-                      Training Topics
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="space-y-3">
-                      {trainingTopics.slice(0, 6).map((topic, index) => (
-                        <div key={index} className="flex items-start space-x-3 group">
-                          <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform" />
-                          <span className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{topic}</span>
-                        </div>
-                      ))}
-                      {trainingTopics.length > 6 && (
-                        <div className="pt-4">
-                          <p className="text-sm text-muted-foreground italic">...and {trainingTopics.length - 6} more specialized topics</p>
-                        </div>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+            <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
+              <span className="mb-4 inline-flex items-center rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+                Knowledge Transfer
+              </span>
+              <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+                Training programmes that equip your teams with legal insight
+              </h2>
+              <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+                We design bespoke workshops and briefings that help leadership teams anticipate risk and navigate regulatory change.
+              </p>
             </div>
-          </div>
-        </section>
 
-        {/* Notarial Services Section */}
-        <section className="py-20 sm:py-24 lg:py-32">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <div className="inline-block px-6 py-2 bg-primary/10 rounded-full border border-primary/20 mb-6">
-                  <span className="text-sm font-medium text-primary">AUTHENTICATION SERVICES</span>
-                </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
-                  Notarial Services
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Professional document authentication and attestation services for international and local use
-                </p>
-              </div>
-              
-              <Card className="border border-border/50 backdrop-blur-sm bg-card/50 shadow-2xl">
-                <CardContent className="p-8 lg:p-12">
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                    <div className="space-y-6">
-                      <div className="space-y-4">
-                        <h3 className="text-2xl font-bold text-foreground flex items-center">
-                          <Shield className="w-8 h-8 text-primary mr-3" />
-                          Professional Attestation
-                        </h3>
-                        <p className="text-base text-muted-foreground leading-relaxed">
-                          We offer comprehensive Notary Public services for attestation and notarisation of documents in Malaysia. As an established firm providing legal services across Malaysia's business hubs, we ensure your documents meet international standards.
-                        </p>
-                      </div>
-                      
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-semibold text-foreground">Key Benefits:</h4>
-                        <ul className="space-y-3">
-                          <li className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                            <span className="text-sm text-muted-foreground">International recognition and authentication</span>
-                          </li>
-                          <li className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                            <span className="text-sm text-muted-foreground">Saves time and travel costs for overseas matters</span>
-                          </li>
-                          <li className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                            <span className="text-sm text-muted-foreground">Essential for property transfers and estate matters</span>
-                          </li>
-                        </ul>
-                      </div>
+            <div className="grid gap-6 lg:grid-cols-2">
+              <Card className="border border-border/40 bg-background/90 shadow-md">
+                <CardHeader className="pb-4">
+                  <CardTitle className="flex items-center gap-3 text-2xl font-semibold text-foreground">
+                    <Award className="h-7 w-7 text-primary" />
+                    Training excellence
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-sm text-muted-foreground sm:text-base">
+                  <p>
+                    From employment law to construction risk, we run practical sessions that translate legislation into actionable policies and workflows for your teams.
+                  </p>
+                  <p>
+                    Clients across insurance, banking, and heavy industry rely on our trainers to deliver scenario-based learning that prepares them for real-world decisions.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border border-border/40 bg-background/90 shadow-md">
+                <CardHeader className="pb-4">
+                  <CardTitle className="flex items-center gap-3 text-2xl font-semibold text-foreground">
+                    <Users className="h-7 w-7 text-primary" />
+                    Recent topics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {trainingTopics.slice(0, 6).map((topic) => (
+                    <div key={topic} className="flex items-start gap-3">
+                      <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary"></span>
+                      <span className="text-sm text-muted-foreground sm:text-base">{topic}</span>
                     </div>
-                    
-                    <div className="space-y-6">
-                      <div className="p-6 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl border border-primary/20">
-                        <h4 className="text-lg font-semibold text-foreground mb-4">Document Types We Certify:</h4>
-                        <div className="grid grid-cols-2 gap-3 text-sm text-muted-foreground">
-                          <div>• Identity Cards</div>
-                          <div>• Passports</div>
-                          <div>• Certificates</div>
-                          <div>• Legal Documents</div>
-                          <div>• Property Papers</div>
-                          <div>• Estate Documents</div>
-                        </div>
-                      </div>
-                      
-                      <div className="p-6 bg-card border border-border/50 rounded-2xl">
-                        <h4 className="text-lg font-semibold text-foreground mb-4">Contact Information:</h4>
-                        <div className="space-y-3">
-                          <p className="text-base text-muted-foreground">
-                            For notarial services inquiries, please contact:
-                          </p>
-                          <Button 
-                            variant="outline" 
-                            size="lg"
-                            className="w-full h-14 text-base border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
-                            asChild
-                          >
-                            <a href="tel:+60125050713">
-                              <Shield className="w-5 h-5 mr-3" />
-                              Call Now: +60125050713
-                            </a>
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
+                  {trainingTopics.length > 6 && (
+                    <p className="pt-2 text-sm italic text-muted-foreground sm:text-base">
+                      …plus {trainingTopics.length - 6} additional programmes tailored to specific sectors.
+                    </p>
+                  )}
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
+
+        {/* Notarial Services Section */}
+        <section className="py-20 sm:py-24 lg:py-28">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
+              <span className="mb-4 inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                Authentication Services
+              </span>
+              <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+                Notarial services recognised locally and abroad
+              </h2>
+              <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+                Ensure your documents meet international standards with attestation handled by our experienced notary public.
+              </p>
+            </div>
+
+            <Card className="border border-border/40 bg-background/90 shadow-xl">
+              <CardContent className="grid gap-8 p-8 lg:grid-cols-2 lg:p-12">
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="flex items-center gap-3 text-2xl font-semibold text-foreground">
+                      <Shield className="h-7 w-7 text-primary" />
+                      Professional attestation
+                    </h3>
+                    <p className="text-sm text-muted-foreground sm:text-base">
+                      Whether you’re completing a property transfer, managing overseas business filings, or arranging estate documentation, our notarial team provides fast, compliant certification.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <h4 className="text-lg font-semibold text-foreground">Why clients choose us:</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground sm:text-base">
+                      <li>• Documents trusted by embassies and regulators worldwide</li>
+                      <li>• Efficient scheduling without unnecessary delays</li>
+                      <li>• Guidance on required supporting paperwork</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6">
+                    <h4 className="text-lg font-semibold text-foreground">Common documents we certify:</h4>
+                    <div className="mt-4 grid grid-cols-2 gap-3 text-sm text-muted-foreground sm:text-base">
+                      <span>• Identity cards</span>
+                      <span>• Passports</span>
+                      <span>• Academic certificates</span>
+                      <span>• Commercial agreements</span>
+                      <span>• Property transfers</span>
+                      <span>• Estate paperwork</span>
+                    </div>
+                  </div>
+
+                  <div className="rounded-2xl border border-border/40 bg-background p-6">
+                    <h4 className="text-lg font-semibold text-foreground">Book an appointment</h4>
+                    <p className="mt-3 text-sm text-muted-foreground sm:text-base">
+                      Contact our Ipoh office to schedule notarisation with William Balasingam.
+                    </p>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="mt-5 w-full min-h-[52px] text-base font-semibold border-primary/30"
+                      asChild
+                    >
+                      <a href="tel:+60125050713">
+                        <Shield className="mr-2 h-5 w-5" />
+                        Call +60 12-505 0713
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
       </div>
     </Layout>
   );

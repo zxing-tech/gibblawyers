@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Calendar, Award, MapPin, Users, BookOpen, Scale } from 'lucide-react';
 
 const History = () => {
@@ -34,6 +34,29 @@ const History = () => {
     }
   ];
 
+  const heritageGallery = [
+    {
+      src: "/images/WhatsApp Image 2025-10-10 at 11.26.16_4a415d21.jpg",
+      title: "1914 Power of Attorney",
+      description: "Handwritten deed executed by Gibb & Co with original seals and endorsements."
+    },
+    {
+      src: "/images/WhatsApp Image 2025-10-10 at 11.26.16_1052c524.jpg",
+      title: "Stamped Deed Cover",
+      description: "Outer sheet featuring duty stamps that authenticated early firm matters."
+    },
+    {
+      src: "/images/WhatsApp Image 2025-10-10 at 11.26.42_eb25a5a6.jpg",
+      title: "1948 Solicitors’ Letter",
+      description: "Correspondence confirming fees owed to Gibb & Co, evidencing long-standing international work."
+    },
+    {
+      src: "/images/WhatsApp Image 2025-10-02 at 15.07.18_7d8f2942.jpg",
+      title: "Heritage Ledger Safe",
+      description: "Fireproof safe still protecting wills and deeds within chambers today."
+    }
+  ];
+
   const foundingPrinciples = [
     {
       title: "Legal Excellence",
@@ -63,72 +86,58 @@ const History = () => {
       description="Discover the rich heritage of Gibb & Co, established in 1892 by Alfred Montagu Gibb. Over 130 years of legal excellence in Malaysia."
     >
       {/* Header Section */}
-      <section className="relative bg-gradient-to-br from-secondary/30 to-background py-16 sm:py-20 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-8">
-              <div className="w-20 h-px bg-primary/60"></div>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/history-hero.jpg')] bg-cover bg-center md:bg-top"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/45 to-background/75 md:from-background/50 md:via-background/30 md:to-background/65"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-background/35 to-background/55 md:from-background/40 md:via-background/25 md:to-background/45"></div>
+
+        <div className="relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+            <div className="mx-auto max-w-4xl text-center space-y-6 sm:space-y-8">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                Established 1892
+              </span>
+              <h1 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+                Our heritage of legal excellence
+              </h1>
+              <p className="text-base text-muted-foreground sm:text-lg">
+                From Alfred Montagu Gibb’s arrival in Malaya to today’s multi-disciplinary practice, we’ve spent over 130 years pairing integrity with impact.
+              </p>
             </div>
-            
-            <div className="inline-block px-6 py-2 bg-primary/10 rounded-full border border-primary/20 mb-8">
-              <span className="text-sm font-medium text-primary">ESTABLISHED 1892</span>
-            </div>
-            
-            <h1 className="heading-hero text-4xl sm:text-5xl lg:text-6xl leading-tight mb-8">
-              Our Heritage
-            </h1>
-            
-            <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed mb-8">
-              A Legacy of Legal Excellence Since 1892
-            </p>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              From the arrival of Alfred Montagu Gibb in Penang to the establishment of one of Malaysia's oldest law firms, 
-              our story is one of dedication, integrity, and unwavering commitment to legal excellence.
-            </p>
           </div>
         </div>
       </section>
 
       {/* Founding Story Section */}
-      <section className="py-16 sm:py-20 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 lg:items-center">
               <div className="space-y-8">
-                <div className="space-y-6">
-                  <div className="inline-block px-6 py-2 bg-accent/10 rounded-full border border-accent/20">
-                    <span className="text-sm font-medium text-accent">THE BEGINNING</span>
-                  </div>
-                  
-                  <h2 className="heading-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
-                    Alfred Montagu Gibb's Vision
+                <div className="space-y-5">
+                  <span className="inline-flex items-center justify-center rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+                    The beginning
+                  </span>
+                  <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+                    Alfred Montagu Gibb’s vision for service
                   </h2>
-                  
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    In 1892, Alfred Montagu Gibb arrived in Penang, Malaya aboard a British ship, bringing with him 
-                    a vision to establish a legal practice that would serve the growing community with integrity and expertise.
+                  <p className="text-sm text-muted-foreground sm:text-base">
+                    In 1892, Alfred Montagu Gibb arrived in Penang, envisioning a legal practice grounded in trust and community impact. Gibb & Co grew from those principles, serving a rapidly developing Malaya with dependable counsel.
                   </p>
-                  
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    He founded Gibb & Co in Ipoh, laying the foundation for what would become one of Malaysia's most 
-                    enduring legal institutions. His commitment to professional excellence and ethical practice established 
-                    the principles that continue to guide our firm today.
+                  <p className="text-sm text-muted-foreground sm:text-base">
+                    His dedication to rigorous standards and client advocacy set the values that continue to guide our partners today.
                   </p>
                 </div>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {foundingPrinciples.map((principle, index) => (
-                    <Card key={index} className="border border-border/50 hover:shadow-lg transition-all duration-300">
-                      <CardContent className="p-6">
-                        <div className="flex items-start space-x-4">
-                          <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <principle.icon className="h-5 w-5 text-primary" />
-                          </div>
-                          <div>
-                            <h3 className="font-semibold text-foreground mb-2">{principle.title}</h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{principle.description}</p>
-                          </div>
+                    <Card key={index} className="rounded-2xl border border-border/40 bg-background/95 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+                      <CardContent className="flex items-start gap-4 p-6">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                          <principle.icon className="h-5 w-5" />
+                        </div>
+                        <div className="space-y-2">
+                          <h3 className="text-base font-semibold text-foreground">{principle.title}</h3>
+                          <p className="text-sm text-muted-foreground">{principle.description}</p>
                         </div>
                       </CardContent>
                     </Card>
@@ -137,72 +146,68 @@ const History = () => {
               </div>
               
               <div className="relative">
-                <Card className="border border-border/50 overflow-hidden">
-                  <div className="aspect-[4/5] bg-gradient-to-b from-primary/5 to-accent/5 flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <Award className="h-16 w-16 text-primary mx-auto mb-6" />
-                      <h3 className="text-2xl font-bold text-foreground mb-4">Founded 1892</h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        "To serve with integrity, excellence, and unwavering commitment to justice"
+                <Card className="overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-xl">
+                  <div className="flex aspect-[4/5] items-center justify-center bg-gradient-to-b from-primary/5 to-accent/5 p-8 text-center">
+                    <div className="space-y-4">
+                      <Award className="mx-auto h-14 w-14 text-primary" />
+                      <h3 className="text-xl font-semibold text-foreground sm:text-2xl">Founded 1892</h3>
+                      <p className="text-sm text-muted-foreground sm:text-base">
+                        “Integrity, excellence, and unwavering commitment to justice.”
                       </p>
-                      <p className="text-sm text-primary mt-4 font-medium">- Alfred Montagu Gibb</p>
+                      <p className="text-xs font-medium text-primary sm:text-sm">- Alfred Montagu Gibb</p>
                     </div>
                   </div>
                 </Card>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Timeline Section */}
-      <section className="py-16 sm:py-20 lg:py-32 bg-gradient-to-r from-primary/5 via-transparent to-accent/5">
+      <section className="py-16 sm:py-20 lg:py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-block px-6 py-2 bg-primary/10 rounded-full border border-primary/20 mb-6">
-                <span className="text-sm font-medium text-primary">HERITAGE TIMELINE</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
-                Our Journey Through History
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center space-y-4 sm:space-y-6">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                Heritage timeline
+              </span>
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+                Our journey through history
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Key milestones in the establishment and early development of Gibb & Co
+              <p className="text-sm text-muted-foreground sm:text-base">
+                Milestones that shaped Gibb & Co’s reputation for trusted advocacy across Malaysia.
               </p>
             </div>
-            
-            <div className="space-y-8">
+
+            <div className="mt-10 space-y-6 sm:mt-14">
               {timelineEvents.map((event, index) => (
-                <Card key={index} className={`border ${event.highlight ? 'border-primary/30 bg-primary/5' : 'border-border/50'} hover:shadow-lg transition-all duration-300`}>
-                  <CardContent className="p-8">
-                    <div className="flex items-start space-x-6">
-                      <div className={`w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                        event.highlight 
-                          ? 'bg-primary text-primary-foreground' 
-                          : 'bg-primary/10 text-primary'
-                      }`}>
-                        <event.icon className="h-8 w-8" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-4 mb-4">
-                          <span className={`text-2xl sm:text-3xl font-bold ${
-                            event.highlight ? 'text-primary' : 'text-foreground'
-                          }`}>
-                            {event.year}
+                <Card
+                  key={index}
+                  className={`rounded-3xl border ${
+                    event.highlight ? 'border-primary/40 bg-primary/5 shadow-lg' : 'border-border/40 bg-background/95 shadow'
+                  } transition hover:-translate-y-1 hover:shadow-xl`}
+                >
+                  <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-8">
+                    <div
+                      className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl text-primary ${
+                        event.highlight ? 'bg-primary text-primary-foreground' : 'bg-primary/10'
+                      }`}
+                    >
+                      <event.icon className="h-8 w-8" />
+                    </div>
+                    <div className="flex-1 space-y-4">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className={`text-xl font-semibold sm:text-2xl ${event.highlight ? 'text-primary' : 'text-foreground'}`}>
+                          {event.year}
+                        </span>
+                        {event.highlight && (
+                          <span className="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                            Foundation year
                           </span>
-                          {event.highlight && (
-                            <div className="px-3 py-1 bg-primary/20 rounded-full">
-                              <span className="text-xs font-medium text-primary uppercase tracking-wider">Foundation Year</span>
-                            </div>
-                          )}
-                        </div>
-                        <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
-                          {event.title}
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {event.description}
-                        </p>
+                        )}
                       </div>
+                      <h3 className="text-lg font-semibold text-foreground sm:text-xl">{event.title}</h3>
+                      <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{event.description}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -213,50 +218,62 @@ const History = () => {
       </section>
 
       {/* Legacy Section */}
-      <section className="py-16 sm:py-20 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <div className="space-y-8">
-              <div className="w-20 h-px bg-primary/60 mx-auto"></div>
-              
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-                A Heritage of Excellence
-              </h2>
-              
-              <p className="text-xl sm:text-2xl text-primary font-medium leading-relaxed">
-                From 1892 to today, we continue the tradition of legal excellence established by our founders.
+          <div className="mx-auto max-w-4xl space-y-10 text-center">
+            <div className="space-y-6 sm:space-y-8">
+              <span className="inline-flex h-0.5 w-20 items-center justify-center bg-primary/60" aria-hidden="true"></span>
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">A heritage of excellence</h2>
+              <p className="text-base font-medium text-primary sm:text-lg">
+                We honour our founders’ principles by pairing heritage with modern legal insight.
               </p>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                The principles established by Alfred Montagu Gibb and continued by Ashworth Hope form the foundation 
-                of our practice today. Our commitment to integrity, excellence, and client service remains unchanged 
-                after more than 130 years of continuous legal practice.
+              <p className="text-sm text-muted-foreground sm:text-base">
+                Decades after Alfred Montagu Gibb and Ashworth Hope shaped our practice, we continue to invest in people, clients, and community. Integrity, expertise, and personal service still guide every mandate we accept.
               </p>
             </div>
-            
-            <Card className="border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5">
-              <CardContent className="p-8 sm:p-12">
-                <div className="flex items-center justify-center space-x-8 text-center">
-                  <div>
-                    <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">130+</div>
-                    <div className="text-sm text-muted-foreground uppercase tracking-wider">Years of Service</div>
-                  </div>
-                  <div className="w-px h-16 bg-border"></div>
-                  <div>
-                    <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">3</div>
-                    <div className="text-sm text-muted-foreground uppercase tracking-wider">Generations</div>
-                  </div>
-                  <div className="w-px h-16 bg-border"></div>
-                  <div>
-                    <div className="text-4xl sm:text-5xl font-bold text-primary mb-2">1892</div>
-                    <div className="text-sm text-muted-foreground uppercase tracking-wider">Established</div>
-                  </div>
+
+            <Card className="rounded-3xl border border-primary/30 bg-gradient-to-r from-primary/10 via-background/95 to-accent/10 shadow-lg">
+              <CardContent className="grid gap-6 p-8 sm:grid-cols-3 sm:items-center">
+                <div className="space-y-2">
+                  <div className="text-3xl font-bold text-primary sm:text-4xl">130+</div>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground">Years of service</p>
+                </div>
+                <div className="hidden h-12 w-px bg-border sm:block" aria-hidden="true"></div>
+                <div className="space-y-2">
+                  <div className="text-3xl font-bold text-primary sm:text-4xl">3</div>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground">Generations</p>
+                </div>
+                <div className="hidden h-12 w-px bg-border sm:block" aria-hidden="true"></div>
+                <div className="space-y-2">
+                  <div className="text-3xl font-bold text-primary sm:text-4xl">1892</div>
+                  <p className="text-xs uppercase tracking-widest text-muted-foreground">Established</p>
                 </div>
               </CardContent>
             </Card>
+
+            <div className="grid gap-6 pt-10 sm:grid-cols-2">
+              {heritageGallery.map((item) => (
+                <Card
+                  key={item.title}
+                  className="overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-lg"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    loading="lazy"
+                    className="h-56 w-full object-cover"
+                  />
+                  <CardContent className="space-y-2 p-6">
+                    <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
     </Layout>
   );
 };

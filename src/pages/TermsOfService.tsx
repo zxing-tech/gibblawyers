@@ -9,21 +9,25 @@ const TermsOfService = () => {
       description="Gibb & Co Terms of Service - Legal terms and conditions for using our legal services and website."
     >
       {/* Header Section */}
-      <section className="relative bg-gradient-to-br from-secondary/30 to-background py-12 sm:py-16 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6 sm:mb-8">
-              <div className="w-16 sm:w-20 h-px bg-primary/60"></div>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/terms-hero.jpg')] bg-cover bg-center md:bg-top"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/45 to-background/75 md:from-background/50 md:via-background/30 md:to-background/65"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-background/35 to-background/55 md:from-background/40 md:via-background/25 md:to-background/45"></div>
+
+        <div className="relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+            <div className="mx-auto max-w-3xl text-center space-y-6 sm:space-y-8">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                Terms & conditions
+              </span>
+              <h1 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+                Legal terms for using our services and site
+              </h1>
+              <p className="text-base text-muted-foreground sm:text-lg">
+                Review the contractual framework governing engagement with Gibb & Co and your use of our digital properties.
+              </p>
+              <p className="text-xs text-muted-foreground sm:text-sm">Last updated: September 2024</p>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 sm:mb-8 leading-tight">
-              Terms of Service
-            </h1>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              These terms govern your use of our legal services and website. Please read them carefully.
-            </p>
-            <p className="text-sm text-muted-foreground mt-4">
-              Last updated: September 2024
-            </p>
           </div>
         </div>
       </section>
@@ -31,19 +35,19 @@ const TermsOfService = () => {
       {/* Content Section */}
       <section className="py-12 sm:py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="mx-auto max-w-4xl space-y-8">
             
             {/* Legal Services */}
-            <Card className="border border-border/50">
+            <Card className="rounded-3xl border border-border/40 bg-background/95 shadow">
               <CardHeader>
-                <CardTitle className="flex items-center text-xl sm:text-2xl text-foreground">
-                  <Scale className="h-6 w-6 text-primary mr-3" />
-                  Legal Services Agreement
+                <CardTitle className="flex items-center gap-3 text-lg font-semibold text-foreground sm:text-2xl">
+                  <Scale className="h-6 w-6 text-primary" />
+                  Legal services agreement
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
+              <CardContent className="space-y-4 text-sm text-muted-foreground sm:text-base">
                 <p>When you engage our legal services:</p>
-                <ul className="space-y-2 list-disc list-inside">
+                <ul className="list-disc space-y-2 pl-5">
                   <li>A formal attorney-client relationship is established through a written retainer agreement</li>
                   <li>Our services are subject to Malaysian legal practice standards and regulations</li>
                   <li>We are bound by professional conduct rules and confidentiality obligations</li>
@@ -54,39 +58,39 @@ const TermsOfService = () => {
             </Card>
 
             {/* Website Use */}
-            <Card className="border border-border/50">
+            <Card className="rounded-3xl border border-border/40 bg-background/95 shadow">
               <CardHeader>
-                <CardTitle className="flex items-center text-xl sm:text-2xl text-foreground">
-                  <FileText className="h-6 w-6 text-primary mr-3" />
-                  Website Use
+                <CardTitle className="flex items-center gap-3 text-lg font-semibold text-foreground sm:text-2xl">
+                  <FileText className="h-6 w-6 text-primary" />
+                  Website use
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
+              <CardContent className="space-y-4 text-sm text-muted-foreground sm:text-base">
                 <p>By using our website, you agree to:</p>
-                <ul className="space-y-2 list-disc list-inside">
+                <ul className="list-disc space-y-2 pl-5">
                   <li>Use the website for lawful purposes only</li>
                   <li>Not interfere with the website's operation or security</li>
                   <li>Not attempt to gain unauthorized access to any part of the website</li>
                   <li>Respect intellectual property rights in the content</li>
                   <li>Provide accurate information when contacting us</li>
                 </ul>
-                <div className="mt-4 p-4 bg-accent/10 rounded-lg border border-accent/20">
+                <div className="rounded-2xl border border-accent/20 bg-accent/10 p-4">
                   <p><strong>Information Accuracy:</strong> While we strive to keep information current, website content is for general information only and should not be relied upon as legal advice.</p>
                 </div>
               </CardContent>
             </Card>
 
             {/* Professional Responsibilities */}
-            <Card className="border border-border/50">
+            <Card className="rounded-3xl border border-border/40 bg-background/95 shadow">
               <CardHeader>
-                <CardTitle className="flex items-center text-xl sm:text-2xl text-foreground">
-                  <Users className="h-6 w-6 text-primary mr-3" />
-                  Professional Responsibilities
+                <CardTitle className="flex items-center gap-3 text-lg font-semibold text-foreground sm:text-2xl">
+                  <Users className="h-6 w-6 text-primary" />
+                  Professional responsibilities
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
+              <CardContent className="space-y-4 text-sm text-muted-foreground sm:text-base">
                 <p>As licensed legal practitioners in Malaysia, we are bound by:</p>
-                <ul className="space-y-2 list-disc list-inside">
+                <ul className="list-disc space-y-2 pl-5">
                   <li>The Legal Profession Act 1976</li>
                   <li>Rules of the High Court of Malaya and Sabah & Sarawak</li>
                   <li>Malaysian Bar Council professional conduct rules</li>
@@ -100,37 +104,37 @@ const TermsOfService = () => {
             </Card>
 
             {/* Limitation of Liability */}
-            <Card className="border border-border/50">
+            <Card className="rounded-3xl border border-border/40 bg-background/95 shadow">
               <CardHeader>
-                <CardTitle className="flex items-center text-xl sm:text-2xl text-foreground">
-                  <AlertTriangle className="h-6 w-6 text-primary mr-3" />
-                  Limitation of Liability
+                <CardTitle className="flex items-center gap-3 text-lg font-semibold text-foreground sm:text-2xl">
+                  <AlertTriangle className="h-6 w-6 text-primary" />
+                  Limitation of liability
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
+              <CardContent className="space-y-4 text-sm text-muted-foreground sm:text-base">
                 <p>Our liability is limited as follows:</p>
-                <ul className="space-y-2 list-disc list-inside">
+                <ul className="list-disc space-y-2 pl-5">
                   <li>Professional liability is covered by our professional indemnity insurance</li>
                   <li>We are not liable for losses arising from circumstances beyond our control</li>
                   <li>Our liability for any claim is limited to the amount of fees paid for the relevant service</li>
                   <li>We exclude liability for indirect, consequential, or punitive damages where permitted by law</li>
                   <li>Claims must be brought within the time limits specified by Malaysian law</li>
                 </ul>
-                <div className="mt-4 p-4 bg-destructive/10 rounded-lg border border-destructive/20">
+                <div className="rounded-2xl border border-destructive/20 bg-destructive/10 p-4">
                   <p><strong>Important:</strong> Nothing in these terms excludes liability that cannot be excluded by law, including liability for fraud, death, or personal injury caused by negligence.</p>
                 </div>
               </CardContent>
             </Card>
 
             {/* Confidentiality */}
-            <Card className="border border-border/50">
+            <Card className="rounded-3xl border border-border/40 bg-background/95 shadow">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl text-foreground">
-                  Confidentiality & Legal Professional Privilege
+                <CardTitle className="text-lg font-semibold text-foreground sm:text-2xl">
+                  Confidentiality & legal professional privilege
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
-                <ul className="space-y-2 list-disc list-inside">
+              <CardContent className="space-y-4 text-sm text-muted-foreground sm:text-base">
+                <ul className="list-disc space-y-2 pl-5">
                   <li>All communications with us are protected by legal professional privilege</li>
                   <li>We maintain strict confidentiality of client information</li>
                   <li>Information may only be disclosed with your consent or as required by law</li>
@@ -141,15 +145,15 @@ const TermsOfService = () => {
             </Card>
 
             {/* Termination */}
-            <Card className="border border-border/50">
+            <Card className="rounded-3xl border border-border/40 bg-background/95 shadow">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl text-foreground">
-                  Termination of Services
+                <CardTitle className="text-lg font-semibold text-foreground sm:text-2xl">
+                  Termination of services
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
+              <CardContent className="space-y-4 text-sm text-muted-foreground sm:text-base">
                 <p>Either party may terminate our legal services relationship:</p>
-                <ul className="space-y-2 list-disc list-inside">
+                <ul className="list-disc space-y-2 pl-5">
                   <li>Upon completion of the agreed legal work</li>
                   <li>By mutual agreement in writing</li>
                   <li>By either party giving reasonable notice</li>
@@ -162,14 +166,14 @@ const TermsOfService = () => {
             </Card>
 
             {/* Governing Law */}
-            <Card className="border border-border/50">
+            <Card className="rounded-3xl border border-border/40 bg-background/95 shadow">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl text-foreground">
-                  Governing Law & Jurisdiction
+                <CardTitle className="text-lg font-semibold text-foreground sm:text-2xl">
+                  Governing law & jurisdiction
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-muted-foreground">
-                <ul className="space-y-2 list-disc list-inside">
+              <CardContent className="space-y-4 text-sm text-muted-foreground sm:text-base">
+                <ul className="list-disc space-y-2 pl-5">
                   <li>These terms are governed by Malaysian law</li>
                   <li>Any disputes will be subject to the jurisdiction of Malaysian courts</li>
                   <li>Professional conduct matters are subject to Malaysian Bar Council jurisdiction</li>
@@ -179,22 +183,20 @@ const TermsOfService = () => {
             </Card>
 
             {/* Contact Information */}
-            <Card className="border border-border/50 bg-primary/5">
+            <Card className="rounded-3xl border border-primary/30 bg-primary/5 shadow">
               <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl text-foreground">
-                  Contact Us
+                <CardTitle className="text-lg font-semibold text-foreground sm:text-2xl">
+                  Contact us
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-muted-foreground">
-                <p className="mb-4">
-                  If you have questions about these terms or need legal assistance, please contact us:
-                </p>
-                <div className="space-y-2">
+              <CardContent className="space-y-4 text-sm text-muted-foreground sm:text-base">
+                <p>If you have questions about these terms or need legal assistance, please contact us:</p>
+                <div className="space-y-2 text-foreground">
                   <p><strong>Gibb & Co</strong></p>
                   <p>Unit 2, 7th floor, Ipoh Tower</p>
                   <p>Jalan Dato Seri Ahmad Said, 31350 Ipoh</p>
                   <p>Email: admin@gibblawyers.com</p>
-                  <p>Phone: +605 547 1313</p>
+                  <p>Phone: +60 5-547 1313</p>
                 </div>
               </CardContent>
             </Card>
