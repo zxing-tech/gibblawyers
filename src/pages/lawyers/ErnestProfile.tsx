@@ -60,16 +60,10 @@ const ErnestProfile = () => {
       description: "Leading the employment law and industrial relations department, advising on high-stakes restructuring, employee misconduct investigations, and regulatory compliance mandates."
     },
     {
-      period: "1995 - 2005",
+      period: "1997 - 2005",
       role: "Partner",
       company: "Gibb & Co",
       description: "Specialized in employment law, industrial relations, and judicial review, with a focus on HR consulting and workplace mental health."
-    },
-    {
-      period: "1988 - 1995",
-      role: "Associate",
-      company: "Gibb & Co",
-      description: "Built foundation in general litigation and employment law practice."
     }
   ];
 
@@ -81,8 +75,8 @@ const ErnestProfile = () => {
 
   return (
     <Layout 
-      title="E. Ernest Balasingam - Senior Partner | Gibb Lawyers"
-      description="Meet E. Ernest Balasingam, Senior Partner at Gibb & Co with expertise in employment law, industrial relations, and judicial review."
+      title="Ernest Balasingam - Senior Partner | Gibb Lawyers"
+      description="Meet Ernest Balasingam, Senior Partner at Gibb & Co with expertise in employment law, industrial relations, and judicial review."
     >
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-accent/10 via-secondary/20 to-background py-16 sm:py-20 lg:py-32">
@@ -95,7 +89,7 @@ const ErnestProfile = () => {
                   <div className="aspect-[3/4] relative">
                     <img
                       src="https://gibblawyers.com/wp-content/uploads/2021/04/GIBB_ERNEST_thumbnail.jpg"
-                      alt="E. Ernest Balasingam - Senior Partner"
+                      alt="Ernest Balasingam - Senior Partner"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -111,12 +105,18 @@ const ErnestProfile = () => {
                   </div>
                   
                   <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                    E. Ernest Balasingam
+                    Ernest Balasingam
                   </h1>
                   
                   <p className="text-xl text-muted-foreground leading-relaxed">
-                    Lawyer, HR strategist, and trainer specialising in employment law, industrial relations, and judicial review—valued for legal precision, strategic pragmatism, and a deep understanding of organisational dynamics.
+                    Lawyer, HR strategist, and trainer specialising in employment law, industrial relations, and judicial review, valued for legal precision, strategic pragmatism, and a deep understanding of organisational dynamics.
                   </p>
+                  
+                  <div className="pt-4 border-t border-border/50">
+                    <p className="text-lg text-muted-foreground italic leading-relaxed">
+                      "Commitment does not need an alarm clock!"
+                    </p>
+                  </div>
                 </div>
 
                 {/* Quick Stats */}
@@ -147,7 +147,12 @@ const ErnestProfile = () => {
                       </div>
                       <div className="flex items-center space-x-3">
                         <Phone className="h-5 w-5 text-accent" />
-                        <span className="text-sm text-muted-foreground">+60 5-254 6445</span>
+                        <a 
+                          href="tel:+60125162687" 
+                          className="text-sm text-muted-foreground hover:text-accent transition"
+                        >
+                          +60 12-516 2687
+                        </a>
                       </div>
                     </div>
                   </CardContent>
@@ -165,10 +170,10 @@ const ErnestProfile = () => {
             <Card className="border border-border/50">
               <CardContent className="p-8 space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Ernest Balasingam is Senior Partner at Gibb & Co. Advocates & Solicitors, where he has spent more than two decades specialising in employment law, industrial relations, and judicial review. He is engaged for high-stakes restructuring, employee misconduct investigations, and regulatory compliance mandates that call for legal rigor and a nuanced grasp of organisational dynamics.
+                  Ernest Balasingam is Senior Partner at Gibb & Co. Advocates & Solicitors, where he has spent nearly three decades specialising in employment law, industrial relations, and judicial review. He is engaged for high-stakes restructuring, employee misconduct investigations, and regulatory compliance mandates that call for legal rigor and a nuanced grasp of organisational dynamics.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  His academic grounding in Physical & Health Education (University of Toronto) and Law (University of Wolverhampton) reflects the discipline and adaptability that shape his work. As founder of Back2Basics Consultants—an HRDCorp Registered Training Provider—Ernest trains and advises companies on HR best practices, workplace mental health, leadership, and compliance frameworks, championing evidence-based policies over superficial fixes.
+                  His academic grounding in Physical & Health Education (University of Toronto) and Law (University of Wolverhampton) reflects the discipline and adaptability that shape his work. As founder of Back2Basics Consultants, an HRDCorp Registered Training Provider, Ernest trains and advises companies on HR best practices, workplace mental health, leadership, and compliance frameworks, championing evidence-based policies over superficial fixes.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Outside chambers, Ernest’s four-decade journey as an endurance athlete fuels his community commitments. A former triathlete, he helped establish the Malaysian and Perak Triathlon Associations in the early 1990s and continues to raise funds for underserved causes through cycling initiatives such as Sepeda Amal Borneo (SAB) and AWOL Riders.
@@ -267,7 +272,7 @@ const ErnestProfile = () => {
                   ))}
                   <div className="mt-6 p-4 bg-accent/5 rounded-lg border border-accent/20">
                     <p className="text-sm font-medium text-accent">
-                      Called to Malaysian Bar: 1996
+                      Called to Malaysian Bar: November 1997
                     </p>
                   </div>
                 </CardContent>
@@ -341,7 +346,7 @@ const ErnestProfile = () => {
                 the passionate advocacy and meticulous preparation they deserve. Experience teaches us 
                 that the foundation of successful litigation lies in understanding both the law and the human story behind it."
               </blockquote>
-              <p className="text-accent font-medium">- E. Ernest Balasingam</p>
+              <p className="text-accent font-medium">- Ernest Balasingam</p>
             </div>
           </div>
         </div>

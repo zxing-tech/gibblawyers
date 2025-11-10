@@ -11,15 +11,15 @@ const Lawyers = () => {
       image: "https://gibblawyers.com/wp-content/uploads/2021/04/GIBB_PuanZ_thumbnail.jpg",
       url: "/lawyers/zorinah-mohd-sobri",
       credentials: "LLB (Hons), University of Malaya • Called to Malaysian Bar 1988",
-      experience: "36+ years of legal practice",
+      experience: `${new Date().getFullYear() - 1988}+ years of legal practice`,
       specializations: ["Civil Litigation", "Corporate Advisory", "Probate & Estate"]
     },
     {
-      name: "E. ERNEST BALASINGAM",
+      name: "ERNEST BALASINGAM",
       position: "SENIOR PARTNER",
       image: "https://gibblawyers.com/wp-content/uploads/2021/04/GIBB_ERNEST_thumbnail.jpg",
       url: "/lawyers/ernest-balasingam",
-      credentials: "LLB, University of Wolverhampton • Called to Malaysian Bar 1996",
+      credentials: "LLB, University of Wolverhampton • Called to Malaysian Bar 1997",
       experience: "29+ years of legal practice",
       specializations: ["Employment Law", "Industrial Relations", "Judicial Review"]
     },
@@ -29,7 +29,7 @@ const Lawyers = () => {
       image: "https://gibblawyers.com/wp-content/uploads/2021/04/GIBB_ES_thumbnail-copy.jpg",
       url: "/lawyers/edwin-seibel",
       credentials: "LLB (Hons), University of London • Called to Malaysian Bar 1997",
-      experience: "28+ years of legal practice",
+      experience: "29+ years of legal practice",
       specializations: ["Civil Litigation", "Corporate Advisory", "Property & Trust"]
     }
   ];
@@ -37,7 +37,7 @@ const Lawyers = () => {
   return (
     <Layout 
       title="Our Lawyers | Experienced Legal Partners in Malaysia - Gibb Lawyers"
-      description="Meet our senior partners: Zorinah Mohd Sobri, Ernest Balasingam, and Edwin Seibel. Combined 90+ years of legal expertise in corporate law, employment law, litigation, and property matters. Serving clients across Malaysia from Ipoh and Teluk Intan."
+      description="Meet our senior partners: Zorinah Mohd Sobri, Ernest Balasingam, and Edwin Seibel. Combined 90+ years of legal expertise in corporate law, employment law, litigation, and property matters. Serving clients across Malaysia from Ipoh."
     >
       {/* Header Section */}
       <section className="relative overflow-hidden">
@@ -68,7 +68,7 @@ const Lawyers = () => {
           <div className="mx-auto flex max-w-4xl flex-col overflow-hidden rounded-3xl bg-background/95 shadow-lg ring-1 ring-border/30 md:flex-row">
             <img
               src="/images/heritage/william-ernest-balasingam.jpg"
-              alt="William Ernest Balasingam"
+              alt="Williams Ernest Balasingam"
               className="h-72 w-full object-cover md:h-auto md:w-64"
               loading="lazy"
             />
@@ -76,9 +76,9 @@ const Lawyers = () => {
               <span className="inline-flex w-max items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
                 Legacy in chambers
               </span>
-              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">William Ernest Balasingam</h2>
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Williams Ernest Balasingam</h2>
               <p className="text-sm text-muted-foreground sm:text-base">
-                Called in 1920 and leading Gibb &amp; Co until 2004, William Ernest Balasingam embodied the Inns of Court traditions we carry into every mandate today.
+                Called in 1960 and leading Gibb &amp; Co until 2004, Williams Ernest Balasingam embodied the Inns of Court traditions we carry into every mandate today.
               </p>
             </div>
           </div>

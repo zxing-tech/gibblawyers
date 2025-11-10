@@ -53,7 +53,7 @@ const Disclaimer = () => {
                   <li>Information submitted through our forms is not confidential until a formal relationship exists.</li>
                   <li>Please do not send confidential information via unsecured email or website forms.</li>
                   <li>We are not obligated to maintain confidentiality of unsolicited information.</li>
-                  <li>Time limits may apply to your matter—seek legal advice without delay.</li>
+                  <li>Time limits may apply to your matter, so seek legal advice without delay.</li>
                 </ul>
               </CardContent>
             </Card>
@@ -205,7 +205,11 @@ const Disclaimer = () => {
                   <p>Unit 2, 7th floor, Ipoh Tower</p>
                   <p>Jalan Dato Seri Ahmad Said, 31350 Ipoh</p>
                   <p>Email: admin@gibblawyers.com</p>
-                  <p>Phone: +605 547 1313</p>
+                  <p>
+                    Phone: 
+                    <a href="tel:+6052410736">+6052410736</a> / 
+                    <a href="tel:+6052545042">+6052545042</a>
+                  </p>
                 </div>
                 <p className="mt-4 text-sm font-semibold">
                   Remember: Time limitations may apply to your legal matter. Do not delay seeking qualified legal advice.

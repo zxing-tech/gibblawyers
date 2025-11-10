@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Scale, Calendar, ArrowRight, Star, Award, Shield, Quote, Trophy, CheckCircle } from 'lucide-react';
+import { Users, Scale, Calendar, ArrowRight, Star, Award, Shield, Quote, Trophy, CheckCircle, HeartHandshake } from 'lucide-react';
 
 const Index = () => {
   const services = [
@@ -50,6 +50,8 @@ const Index = () => {
     }
   ];
 
+  const heritageYears = new Date().getFullYear() - 1892;
+
   const testimonials = [
     {
       quote: "Gibb & Co provided exceptional legal guidance during our corporate restructuring. Their expertise in Malaysian commercial law and attention to detail made all the difference.",
@@ -74,34 +76,34 @@ const Index = () => {
   const awards = [
     {
       icon: Trophy,
-      title: "Legal Excellence Award",
-      year: "2023",
-      description: "Recognized for outstanding legal services in Perak"
+      title: "Litigation Finalist 2025",
+      year: "ALB Malaysia Law Awards",
+      description: "Named a finalist for Litigation Law Firm of the Year at the Asian Legal Business (ALB) Malaysia Law Awards, highlighting our expertise in dispute resolution among Malaysia's top firms."
     },
     {
       icon: Star,
       title: "Heritage Law Firm",
-      year: "Continuous",
-      description: "Over 130 years of continuous legal practice"
+      year: `Over ${heritageYears} Years`,
+      description: "Founded in 1892 in Ipoh during Malaya’s tin and rubber era, we deliver continuous legal services across generations while preserving core values of integrity."
     },
     {
       icon: CheckCircle,
-      title: "Bar Council Recognition",
-      year: "2022",
-      description: "Acknowledged for professional standards and ethics"
+      title: "Specialized Expertise",
+      year: "Comprehensive Services",
+      description: "Delivering tailored solutions in corporate, real estate, family, employment, intellectual property, banking, and dispute resolution with multilingual support and a client-first approach across our regional offices."
     },
     {
-      image: '/images/heritage/inns-of-court-crest.jpg',
-      title: "Inns of Court Crest",
-      year: "Presented to Gibb & Co",
-      description: "Symbol of the British legal tradition that continues to guide our partners."
+      icon: HeartHandshake,
+      title: "Community Engagement",
+      year: "Beyond Legal Advice",
+      description: "Our partners lead pro bono initiatives, legal education, and organisations like Rotary International and the Perak Bar, contributing to Ipoh’s community and professional development."
     }
   ];
 
   return (
     <Layout 
       title="Gibb Lawyers | Leading Law Firm in Malaysia Since 1892"
-      description="Gibb & Co. Advocates & Solicitors - Malaysia's trusted law firm with 130+ years of excellence. Expert legal services in corporate law, litigation, property, employment, and family matters across Ipoh and Teluk Intan."
+      description="Gibb & Co. Advocates & Solicitors - Malaysia's trusted law firm with 130+ years of excellence. Expert legal services in corporate law, litigation, property, employment, and family matters in Ipoh."
     >
       {/* Hero Section */}
       <section className="relative overflow-hidden">
@@ -299,18 +301,18 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Recognition */}
+      {/* Strengths */}
       <section className="py-16 sm:py-20 lg:py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
             <span className="mb-4 inline-flex items-center rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-              Recognition
+              Our Strengths
             </span>
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
-              A legacy of excellence acknowledged by the industry
+              Built on Heritage, Expertise, and Community Impact
             </h2>
             <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-              Awards and accolades that reflect our commitment to integrity, service, and results.
+              Key attributes that define our commitment to clients and excellence in legal practice.
             </p>
           </div>
 

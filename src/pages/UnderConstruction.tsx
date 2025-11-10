@@ -25,7 +25,7 @@ const UnderConstruction = () => {
                   Our website is being refreshed
                 </h1>
                 <p className="text-base text-muted-foreground sm:text-lg">
-                  We’re upgrading your experience. In the meantime, reach out directly—we’re ready to help.
+                  We’re upgrading your experience. In the meantime, reach out directly; we’re ready to help.
                 </p>
 
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center sm:gap-4">

@@ -132,9 +132,7 @@ Dear ${clientName},
 Thank you for contacting Gibb & Co Lawyers. We have received your inquiry and appreciate you taking the time to reach out to us.
 
 ${subject ? `Subject: ${subject}\n\n` : ''}Your message has been forwarded to our legal team, and we will review it carefully. One of our experienced lawyers will respond to your inquiry within 24 hours during business days.
-If your matter is urgent, please don't hesitate to call us directly at:
-- Ipoh Office: +605 547 1313
-- Teluk Intan Office: +605 623 1713
+If your matter is urgent, please don't hesitate to call us directly at +605 547 1313.
 
 For immediate assistance, you can also reach us via WhatsApp at ${WHATSAPP_NUMBER_DISPLAY}.
 

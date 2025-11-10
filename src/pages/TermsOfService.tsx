@@ -196,7 +196,11 @@ const TermsOfService = () => {
                   <p>Unit 2, 7th floor, Ipoh Tower</p>
                   <p>Jalan Dato Seri Ahmad Said, 31350 Ipoh</p>
                   <p>Email: admin@gibblawyers.com</p>
-                  <p>Phone: +60 5-547 1313</p>
+                  <p>
+                    Phone: 
+                    <a href="tel:+6052410736">+6052410736</a> / 
+                    <a href="tel:+6052545042">+6052545042</a>
+                  </p>
                 </div>
               </CardContent>
             </Card>

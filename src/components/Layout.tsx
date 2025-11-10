@@ -73,6 +73,59 @@ const Layout = ({
         document.head.appendChild(tag);
       }
     });
+
+    // Ensure responsive viewport meta
+    let viewport = document.querySelector('meta[name="viewport"]');
+    if (!viewport) {
+      viewport = document.createElement('meta');
+      viewport.setAttribute('name', 'viewport');
+      viewport.setAttribute('content', 'width=device-width, initial-scale=1');
+      document.head.appendChild(viewport);
+    }
+
+    // Add/update canonical link
+    if (typeof window !== 'undefined') {
+      const canonicalUrl = `${window.location.origin}${window.location.pathname}`;
+      let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+      if (canonical) {
+        canonical.setAttribute('href', canonicalUrl);
+      } else {
+        canonical = document.createElement('link');
+        canonical.setAttribute('rel', 'canonical');
+        canonical.setAttribute('href', canonicalUrl);
+        document.head.appendChild(canonical);
+      }
+    }
+
+    // Disable context menu (right-click) site-wide and prevent image dragging
+    const handleContextMenu = (e: Event) => {
+      e.preventDefault();
+    };
+    const handleDragStart = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target && target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    };
+    document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener('dragstart', handleDragStart);
+
+    // Inject style to further discourage copying/downloading images
+    let antiCopyStyle = document.getElementById('anti-copy-style');
+    if (!antiCopyStyle) {
+      antiCopyStyle = document.createElement('style');
+      antiCopyStyle.id = 'anti-copy-style';
+      antiCopyStyle.textContent = `
+        img { -webkit-user-drag: none; user-select: none; -webkit-user-select: none; }
+        body { -webkit-touch-callout: none; }
+      `;
+      document.head.appendChild(antiCopyStyle);
+    }
+
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('dragstart', handleDragStart);
+    };
   }, [title, description, ogImage]);
 
   return (

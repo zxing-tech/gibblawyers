@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout';
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Calendar, Award, MapPin, Users, BookOpen, Scale } from 'lucide-react';
 
@@ -34,7 +35,22 @@ const History = () => {
     }
   ];
 
-  const heritageGallery = [
+  const firmHeritageGallery = [
+    {
+      src: "/images/heritage/historic-chambers-building.jpg",
+      title: "Historic Chambers Building (1900-1997)",
+      description: "The iconic colonial-era building that housed Gibb & Co for nearly a century opposite the Ipoh padang."
+    },
+    {
+      src: "/images/heritage/chambers-portrait-wall.jpg",
+      title: "Judiciary Portrait Wall",
+      description: "Caricatured judges surround the Inns of Court crest, reflecting the British legal lineage alive in our Ipoh chambers."
+    },
+    {
+      src: "/images/heritage/chambers-vignette.jpg",
+      title: "Chambers Welcome Display",
+      description: "The Inns of Court crest, W.E. Balasingam portrait, and barrister's wig that greet every visitor to our Ipoh office."
+    },
     {
       src: "/images/heritage/1914-power-of-attorney-open.jpg",
       title: "1914 Power of Attorney",
@@ -47,23 +63,21 @@ const History = () => {
     },
     {
       src: "/images/heritage/1948-sitwell-letter.jpg",
-      title: "1948 Solicitors’ Letter",
+      title: "1948 Solicitors' Letter",
       description: "Correspondence confirming fees owed to Gibb & Co, evidencing long-standing international work."
     },
     {
       src: "/images/heritage/heritage-ledger-safe.jpg",
       title: "Heritage Ledger Safe",
       description: "Fireproof safe still protecting wills and deeds within chambers today."
-    },
+    }
+  ];
+
+  const ipohHeritageGallery = [
     {
-      src: "/images/heritage/chambers-portrait-wall.jpg",
-      title: "Judiciary Portrait Wall",
-      description: "Caricatured judges surround the Inns of Court crest, reflecting the firm’s British legal lineage."
-    },
-    {
-      src: "/images/heritage/chambers-vignette.jpg",
-      title: "Chambers Display",
-      description: "The Inns of Court crest, W.E. Balasingam portrait, and barrister’s wig greeting visitors in Ipoh."
+      src: "/images/heritage/ipoh-tower.jpg",
+      title: "Ipoh Tower (Current Chambers)",
+      description: "Our present office in Greentown, linking a century of tradition to modern Ipoh."
     }
   ];
 
@@ -89,6 +103,8 @@ const History = () => {
       icon: Award
     }
   ];
+
+  const [preview, setPreview] = useState<{ src: string; title: string; description: string } | null>(null);
 
   return (
     <Layout 
@@ -121,7 +137,7 @@ const History = () => {
       {/* Founding Story Section */}
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 lg:items-center">
+          <div className="mx-auto max-w-6xl space-y-10">
               <div className="space-y-8">
                 <div className="space-y-5">
                   <span className="inline-flex items-center justify-center rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
@@ -137,7 +153,20 @@ const History = () => {
                     His dedication to rigorous standards and client advocacy set the values that continue to guide our partners today.
                   </p>
                 </div>
-                
+              </div>
+
+              <Card className="mx-auto w-full lg:max-w-[calc(50%-0.75rem)] rounded-3xl border border-border/40 bg-background/95 shadow-lg">
+                <CardContent className="space-y-4 p-8 text-center">
+                  <Award className="mx-auto h-12 w-12 text-primary" />
+                  <h3 className="text-2xl font-semibold text-foreground sm:text-3xl">Founded 1892</h3>
+                  <p className="text-base text-muted-foreground sm:text-lg">
+                    “Integrity, excellence, and unwavering commitment to justice.”
+                  </p>
+                  <p className="text-xs font-medium text-primary sm:text-sm">- Alfred Montagu Gibb</p>
+                </CardContent>
+              </Card>
+
+              <div className="grid gap-6 lg:grid-cols-2 items-stretch">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {foundingPrinciples.map((principle, index) => (
                     <Card key={index} className="rounded-2xl border border-border/40 bg-background/95 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
@@ -153,20 +182,31 @@ const History = () => {
                     </Card>
                   ))}
                 </div>
-              </div>
-              
-              <div className="relative">
-                <Card className="overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-xl">
-                  <div className="flex aspect-[4/5] items-center justify-center bg-gradient-to-b from-primary/5 to-accent/5 p-8 text-center">
-                    <div className="space-y-4">
-                      <Award className="mx-auto h-14 w-14 text-primary" />
-                      <h3 className="text-xl font-semibold text-foreground sm:text-2xl">Founded 1892</h3>
-                      <p className="text-sm text-muted-foreground sm:text-base">
-                        “Integrity, excellence, and unwavering commitment to justice.”
-                      </p>
-                      <p className="text-xs font-medium text-primary sm:text-sm">- Alfred Montagu Gibb</p>
-                    </div>
+
+                <Card className="flex h-full flex-col overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-xl"
+                  onMouseEnter={() => setPreview({
+                    src: "/images/heritage/1914-power-of-attorney-open.jpg",
+                    title: "1914 Power of Attorney",
+                    description: "Original Power of Attorney drafted by Gibb & Co, complete with sealing wax and endorsements, illustrating early twentieth-century legal craftsmanship."
+                  })}
+                  onMouseLeave={() => setPreview(null)}
+                >
+                  <div className="relative w-full bg-primary/5">
+                    <div className="aspect-[4/3]"></div>
+                    <img
+                      src="/images/heritage/1914-power-of-attorney-open.jpg"
+                      alt="1914 Power of Attorney executed by Gibb & Co"
+                      className="absolute inset-0 h-full w-full object-contain p-6"
+                      loading="lazy"
+                    />
                   </div>
+                  <CardContent className="space-y-3 p-6 text-center">
+                    <h3 className="text-xl font-semibold text-foreground sm:text-2xl">1914 Power of Attorney</h3>
+                    <p className="text-sm text-muted-foreground sm:text-base">
+                      Original Power of Attorney drafted by Gibb &amp; Co, complete with sealing wax and endorsements, illustrating early twentieth-century legal craftsmanship.
+                    </p>
+                    <p className="text-xs font-medium text-primary sm:text-sm">Preserved in the firm’s heritage archives</p>
+                  </CardContent>
                 </Card>
               </div>
             </div>
@@ -227,18 +267,18 @@ const History = () => {
         </div>
       </section>
 
-      {/* Legacy Section */}
+      {/* Firm Heritage Section */}
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl space-y-10 text-center">
             <div className="space-y-6 sm:space-y-8">
               <span className="inline-flex h-0.5 w-20 items-center justify-center bg-primary/60" aria-hidden="true"></span>
-              <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">A heritage of excellence</h2>
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">Firm Heritage</h2>
               <p className="text-base font-medium text-primary sm:text-lg">
-                We honour our founders’ principles by pairing heritage with modern legal insight.
+                Archival documents and artifacts that chart more than a century of counsel from Ipoh.
               </p>
               <p className="text-sm text-muted-foreground sm:text-base">
-                Decades after Alfred Montagu Gibb and Ashworth Hope shaped our practice, we continue to invest in people, clients, and community. Integrity, expertise, and personal service still guide every mandate we accept.
+                These original materials record the firm’s early mandates, client relationships, and stewardship of vital legal records.
               </p>
             </div>
 
@@ -262,10 +302,12 @@ const History = () => {
             </Card>
 
             <div className="grid gap-6 pt-10 sm:grid-cols-2">
-              {heritageGallery.map((item) => (
+              {firmHeritageGallery.map((item) => (
                 <Card
                   key={item.title}
                   className="overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-lg"
+                  onMouseEnter={() => setPreview(item)}
+                  onMouseLeave={() => setPreview(null)}
                 >
                   <img
                     src={item.src}
@@ -284,6 +326,61 @@ const History = () => {
         </div>
       </section>
 
+      {/* Ipoh Heritage Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-muted/15">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl space-y-10 text-center">
+            <div className="space-y-6 sm:space-y-8">
+              <span className="inline-flex h-0.5 w-20 items-center justify-center bg-accent/60" aria-hidden="true"></span>
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">Ipoh Heritage</h2>
+              <p className="text-base font-medium text-accent sm:text-lg">
+                Scenes from the city that shaped our culture of service.
+              </p>
+              <p className="text-sm text-muted-foreground sm:text-base">
+                From the landmark HSBC building that housed chambers to the memorabilia that welcomes guests, Ipoh’s history lives in every detail of our practice.
+              </p>
+            </div>
+
+            <div className="grid gap-6 pt-6 sm:grid-cols-2 lg:grid-cols-3">
+              {ipohHeritageGallery.map((item) => (
+                <Card
+                  key={item.title}
+                  className="overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-lg"
+                  onMouseEnter={() => setPreview(item)}
+                  onMouseLeave={() => setPreview(null)}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    loading="lazy"
+                    className="h-60 w-full object-cover"
+                  />
+                  <CardContent className="space-y-2 p-6">
+                    <h3 className="text-base font-semibold text-foreground">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Hover Preview Overlay (desktop) */}
+      {preview && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 pointer-events-none">
+          <div className="max-w-[90vw] pointer-events-none">
+            <img
+              src={preview.src}
+              alt={preview.title}
+              className="max-h-[75vh] w-auto object-contain rounded-xl shadow-2xl"
+            />
+            <div className="mt-4 text-center px-4">
+              <h4 className="text-lg font-semibold text-background/90 drop-shadow-sm">{preview.title}</h4>
+              <p className="text-sm text-background/80">{preview.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };

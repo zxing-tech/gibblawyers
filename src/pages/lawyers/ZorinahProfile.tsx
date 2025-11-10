@@ -140,7 +140,12 @@ const ZorinahProfile = () => {
                       </div>
                       <div className="flex items-center space-x-3">
                         <Phone className="h-5 w-5 text-primary" />
-                        <span className="text-sm text-muted-foreground">+60 5-254 6445</span>
+                        <a 
+                          href="tel:+60524100027" 
+                          className="text-sm text-muted-foreground hover:text-primary transition"
+                        >
+                          +60 5 241 0027
+                        </a>
                       </div>
                     </div>
                   </CardContent>
@@ -170,7 +175,7 @@ const ZorinahProfile = () => {
                   Her practice spans civil and commercial litigation, corporate and contract advisory, and probate and estate administration. She is recognised for delivering clear, practical strategies grounded in integrity and diligence.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Zorinah advises individuals, families, and corporations on property transactions, commercial agreements, dispute resolution, and family matters—always with a client-centric, pragmatic approach built on trust and long-term relationships.
+                  Zorinah advises individuals, families, and corporations on property transactions, commercial agreements, dispute resolution, and family matters, always with a client-centric, pragmatic approach built on trust and long-term relationships.
                 </p>
               </CardContent>
             </Card>
@@ -256,7 +261,7 @@ const ZorinahProfile = () => {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    She holds fast to the principles of integrity, professionalism, and service—values that define both her work and the ethos of Gibb & Co. Her commitment remains to uphold the highest standards of legal excellence while mentoring the next generation of practitioners.
+                    She holds fast to the principles of integrity, professionalism, and service, values that define both her work and the ethos of Gibb & Co. Her commitment remains to uphold the highest standards of legal excellence while mentoring the next generation of practitioners.
                   </p>
                   {professionalValues.map((value, index) => (
                     <div key={index} className="flex items-start space-x-3">

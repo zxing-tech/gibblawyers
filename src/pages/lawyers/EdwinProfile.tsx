@@ -85,7 +85,7 @@ const EdwinProfile = () => {
   return (
     <Layout 
       title="Edwin Seibel - Senior Partner | Gibb Lawyers"
-      description="Meet Edwin Seibel, Senior Partner at Gibb & Co with over 28 years of legal experience in civil litigation, corporate advisory, and community leadership."
+      description="Meet Edwin Seibel, Senior Partner at Gibb & Co with over 29 years of legal experience in civil litigation, corporate advisory, and community leadership."
     >
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/5 via-accent/10 to-background py-16 sm:py-20 lg:py-32">
@@ -133,7 +133,7 @@ const EdwinProfile = () => {
                   <Card className="border border-primary/20 bg-primary/5">
                     <CardContent className="p-6 text-center">
                       <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
-                      <div className="text-2xl font-bold text-primary mb-1">{new Date().getFullYear() - 1997}+</div>
+                      <div className="text-2xl font-bold text-primary mb-1">29+</div>
                       <div className="text-sm text-muted-foreground">Years Experience</div>
                     </CardContent>
                   </Card>
@@ -156,7 +156,12 @@ const EdwinProfile = () => {
                       </div>
                       <div className="flex items-center space-x-3">
                         <Phone className="h-5 w-5 text-primary" />
-                        <span className="text-sm text-muted-foreground">+60 5-254 6445</span>
+                        <a 
+                          href="tel:+60165508650" 
+                          className="text-sm text-muted-foreground hover:text-primary transition"
+                        >
+                          +6016 550 8650
+                        </a>
                       </div>
                     </div>
                   </CardContent>
@@ -180,13 +185,13 @@ const EdwinProfile = () => {
             <Card className="border border-border/50">
               <CardContent className="p-8 space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Edwin Seibel is an Advocate and Solicitor of the High Court of Malaya with more than 28 years of practice. As Senior Partner of Gibb & Co. in Ipoh, he stewards one of the city’s most established firms and continues its tradition of meticulous, client-centred advocacy.
+                  Edwin Seibel is an Advocate and Solicitor of the High Court of Malaya with more than 29 years of practice. As Senior Partner of Gibb & Co. in Ipoh, he stewards one of the city’s most established firms and continues its tradition of meticulous, client-centred advocacy.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   His caseload spans civil and commercial litigation, corporate advisory mandates, property and trust matters, employment disputes, and family law. Clients rely on Edwin for clear, practical strategies that balance legal precision with empathy for the people behind every brief.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  He is regularly instructed on shareholder arrangements, joint ventures, real estate transactions, and complex documentation—from sale and purchase and loan agreements to settlement terms and trust instruments.
+                  He is regularly instructed on shareholder arrangements, joint ventures, real estate transactions, and complex documentation, from sale and purchase and loan agreements to settlement terms and trust instruments.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Beyond chambers, Edwin is a committed community leader. Twice elected President of the Rotary Club of Ipoh and a two-term Assistant Governor for Rotary International District 3300, he champions initiatives that support orphans, underprivileged families, and special-needs children.

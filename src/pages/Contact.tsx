@@ -9,8 +9,8 @@ import { OFFICES } from '@/data/offices';
 const Contact = () => {
   return (
     <Layout 
-      title="Contact Us | Law Firm in Ipoh & Teluk Intan Malaysia - Gibb Lawyers"
-      description="Contact Gibb & Co. Advocates & Solicitors in Ipoh and Teluk Intan, Malaysia. Call +605 547 1313 (Ipoh) or +605 623 1713 (Teluk Intan). Schedule a legal consultation today."
+      title="Contact Us | Law Firm in Ipoh Malaysia - Gibb Lawyers"
+      description="Contact Gibb & Co. Advocates & Solicitors in Ipoh, Malaysia. Call +6052410736 or +6052545042. Schedule a legal consultation today."
     >
       {/* Header Section */}
       <section className="relative overflow-hidden">
@@ -42,40 +42,56 @@ const Contact = () => {
             {OFFICES.map((office) => (
               <div key={office.name} className="space-y-4 sm:space-y-6">
                 {office.addresses.map((location, locationIndex) => (
-                  <Card key={`${office.name}-${locationIndex}`} className="h-full rounded-3xl border border-border/40 bg-background/95 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+                  <Card key={`${office.name}-${locationIndex}`} className="rounded-3xl border border-border/40 bg-background/95 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
                     <CardHeader className="pb-4 sm:pb-5">
                       <CardTitle className="flex items-center gap-3 text-lg font-semibold text-foreground sm:text-xl">
                         <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
                         {office.name}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="pt-0 flex flex-col h-full">
-                      <div className="flex-grow mb-4 text-sm text-muted-foreground sm:text-base">
+                    <CardContent className="pt-0 flex flex-col">
+                      <div className="mb-3 text-sm text-muted-foreground sm:text-base">
                         <p className="leading-relaxed">
                           {location.address}
                         </p>
                       </div>
                       
-                      <div className="space-y-3 mb-4">
-                        <div className="flex items-center gap-3">
-                          <Phone className="h-4 w-4 text-primary" />
-                          <a 
-                            href={`tel:${location.phone}`} 
-                            className="text-sm text-foreground underline-offset-4 transition hover:text-primary hover:underline sm:text-base"
-                          >
-                            {location.phone}
-                          </a>
-                        </div>
+                      <div className="space-y-2.5 mb-4">
+                        {Array.isArray(location.phone) ? (
+                          location.phone.map((phoneNum, idx) => (
+                            <div key={idx} className="flex items-center gap-3">
+                              <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+                              <a 
+                                href={`tel:${phoneNum.replace(/\s/g, '')}`} 
+                                className="text-sm text-foreground underline-offset-4 transition hover:text-primary hover:underline sm:text-base"
+                              >
+                                {phoneNum}
+                              </a>
+                            </div>
+                          ))
+                        ) : (
+                          <div className="flex items-center gap-3">
+                            <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+                            <a 
+                              href={`tel:${location.phone.replace(/\s/g, '')}`} 
+                              className="text-sm text-foreground underline-offset-4 transition hover:text-primary hover:underline sm:text-base"
+                            >
+                              {location.phone}
+                            </a>
+                          </div>
+                        )}
+                        
+                        {location.fax && (
+                          <div className="flex items-center gap-3">
+                            <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                            <span className="text-sm text-muted-foreground sm:text-base">
+                              F: {location.fax}
+                            </span>
+                          </div>
+                        )}
                         
                         <div className="flex items-center gap-3">
-                          <Phone className="h-4 w-4 text-muted-foreground" />
-                          <span className="text-sm text-muted-foreground sm:text-base">
-                            {location.fax ? `F: ${location.fax}` : '\u00A0'}
-                          </span>
-                        </div>
-                        
-                        <div className="flex items-center gap-3">
-                          <Mail className="h-4 w-4 text-primary" />
+                          <Mail className="h-4 w-4 text-primary flex-shrink-0" />
                           <a 
                             href={`mailto:${location.email}`} 
                             className="text-sm text-foreground underline-offset-4 transition hover:text-primary hover:underline break-all sm:text-base"
@@ -85,7 +101,7 @@ const Contact = () => {
                         </div>
                       </div>
                       
-                      <div className="pt-2">
+                      <div className="pt-1">
                         <a
                           href={location.mapUrl}
                           target="_blank"
@@ -101,28 +117,29 @@ const Contact = () => {
                 ))}
               </div>
             ))}
-            <Card className="overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-lg">
-              <div className="grid gap-6 md:grid-cols-2">
-                <img
-                  src="/images/heritage/chambers-vignette.jpg"
-                  alt="Heritage chambers welcome display"
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-                <CardContent className="flex flex-col justify-center gap-4 p-6 sm:p-8">
-                  <span className="inline-flex w-max items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-                    Visit our chambers
-                  </span>
-                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
-                    A welcome shaped by tradition
-                  </h3>
-                  <p className="text-sm text-muted-foreground sm:text-base">
-                    The Inns of Court crest, barrister’s wig, and William Ernest Balasingam’s portrait greet every visitor—reminders that our counsel is grounded in more than a century of advocacy.
-                  </p>
-                </CardContent>
-              </div>
-            </Card>
           </div>
+          
+          <Card className="overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-lg mt-6">
+            <div className="grid gap-0 md:grid-cols-2">
+              <img
+                src="/images/heritage/chambers-vignette.jpg"
+                alt="Heritage chambers welcome display"
+                className="h-full w-full object-cover min-h-[300px]"
+                loading="lazy"
+              />
+              <CardContent className="flex flex-col justify-center gap-4 p-6 sm:p-8">
+                <span className="inline-flex w-max items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                  Visit our chambers
+                </span>
+                <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
+                  A welcome shaped by tradition
+                </h3>
+                <p className="text-sm text-muted-foreground sm:text-base">
+                  The Inns of Court crest, barrister's wig, and William Ernest Balasingam's portrait greet every visitor, reminders that our counsel is grounded in more than a century of advocacy.
+                </p>
+              </CardContent>
+            </div>
+          </Card>
         </div>
       </section>
 

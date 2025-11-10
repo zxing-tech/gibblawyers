@@ -18,7 +18,7 @@ const FAQ = () => {
         },
         {
           q: "Where are your offices located?",
-          a: "Our main office is located at Unit 2, 7th floor, Ipoh Tower, Jalan Dato Seri Ahmad Said, 31350 Ipoh. We also have an office in Teluk Intan at 28A (1st Floor) Taman Ros, Jalan Sultan Abdullah, 36000, Teluk Intan, Perak."
+          a: "Our office is located at Unit 2, 7th floor, Ipoh Tower, Jalan Dato Seri Ahmad Said, 31350 Ipoh."
         },
         {
           q: "What languages do you provide services in?",
