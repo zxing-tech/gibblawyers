@@ -9,8 +9,8 @@ import { OFFICES } from '@/data/offices';
 const Contact = () => {
   return (
     <Layout 
-      title="Contact Us - Gibb Lawyers"
-      description="In case you have some questions, feel free to call, email or even visit us. Trust your need, knowing we will succeed."
+      title="Contact Us | Law Firm in Ipoh & Teluk Intan Malaysia - Gibb Lawyers"
+      description="Contact Gibb & Co. Advocates & Solicitors in Ipoh and Teluk Intan, Malaysia. Call +605 547 1313 (Ipoh) or +605 623 1713 (Teluk Intan). Schedule a legal consultation today."
     >
       {/* Header Section */}
       <section className="relative overflow-hidden">
@@ -101,6 +101,27 @@ const Contact = () => {
                 ))}
               </div>
             ))}
+            <Card className="overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-lg">
+              <div className="grid gap-6 md:grid-cols-2">
+                <img
+                  src="/images/heritage/chambers-vignette.jpg"
+                  alt="Heritage chambers welcome display"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+                <CardContent className="flex flex-col justify-center gap-4 p-6 sm:p-8">
+                  <span className="inline-flex w-max items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                    Visit our chambers
+                  </span>
+                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
+                    A welcome shaped by tradition
+                  </h3>
+                  <p className="text-sm text-muted-foreground sm:text-base">
+                    The Inns of Court crest, barrister’s wig, and William Ernest Balasingam’s portrait greet every visitor—reminders that our counsel is grounded in more than a century of advocacy.
+                  </p>
+                </CardContent>
+              </div>
+            </Card>
           </div>
         </div>
       </section>

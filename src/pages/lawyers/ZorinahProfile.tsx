@@ -164,10 +164,13 @@ const ZorinahProfile = () => {
             <Card className="border border-border/50">
               <CardContent className="p-8 space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  I am a Partner at Gibb & Co., Advocates & Solicitors, one of Ipoh's most established and respected law firms. Called to the Malaysian Bar in 1988 after completing my LL.B (Hons) from the University of Malaya, I have dedicated my career to the pursuit of justice, professionalism and service to clients.
+                  Zorinah binti Mohd Sobri is a Partner at Gibb & Co., one of Ipoh’s longest-standing firms. Called to the Malaysian Bar in 1988 after completing her LL.B (Hons) at the University of Malaya, she has dedicated more than three decades to advancing justice through professionalism and service.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  With more than three decades of legal experience, my practice encompasses civil and commercial litigation, corporate advisory, and probate and estate administration. I believe in delivering clear, practical and strategic legal solutions grounded in integrity and diligence.
+                  Her practice spans civil and commercial litigation, corporate and contract advisory, and probate and estate administration. She is recognised for delivering clear, practical strategies grounded in integrity and diligence.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Zorinah advises individuals, families, and corporations on property transactions, commercial agreements, dispute resolution, and family matters—always with a client-centric, pragmatic approach built on trust and long-term relationships.
                 </p>
               </CardContent>
             </Card>
@@ -189,11 +192,30 @@ const ZorinahProfile = () => {
             </div>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {specializations.map((spec, index) => (
-                <Badge key={index} variant="outline" className="p-3 text-center justify-center border-primary/30 text-primary hover:bg-primary/10">
-                  {spec}
-                </Badge>
-              ))}
+              {specializations.map((spec, index) => {
+                const serviceMap: Record<string, string> = {
+                  "Civil Litigation": "/services/litigation-adr",
+                  "Commercial Litigation": "/services/litigation-adr",
+                  "Corporate Advisory": "/services/corporate-commercial",
+                  "Contract Advisory": "/services/corporate-commercial",
+                  "Probate & Estate Administration": "/services/trust-estates",
+                  "Family & Matrimonial Matters": "/services/family-law",
+                  "Property Transactions": "/services/real-estate-conveyancing",
+                  "Dispute Resolution": "/services/litigation-adr"
+                };
+                const url = serviceMap[spec];
+                return url ? (
+                  <Link key={index} to={url}>
+                    <Badge variant="outline" className="w-full p-3 text-center justify-center border-primary/30 text-primary hover:bg-primary/10 cursor-pointer transition">
+                      {spec}
+                    </Badge>
+                  </Link>
+                ) : (
+                  <Badge key={index} variant="outline" className="p-3 text-center justify-center border-primary/30 text-primary">
+                    {spec}
+                  </Badge>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -234,7 +256,7 @@ const ZorinahProfile = () => {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <p className="text-muted-foreground leading-relaxed">
-                    I hold fast to the principles of integrity, professionalism, and service—values that define both my work and the ethos of Gibb & Co. My commitment remains to uphold the highest standards of legal excellence while mentoring the next generation of practitioners.
+                    She holds fast to the principles of integrity, professionalism, and service—values that define both her work and the ethos of Gibb & Co. Her commitment remains to uphold the highest standards of legal excellence while mentoring the next generation of practitioners.
                   </p>
                   {professionalValues.map((value, index) => (
                     <div key={index} className="flex items-start space-x-3">

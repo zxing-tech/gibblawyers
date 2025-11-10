@@ -116,28 +116,34 @@ const Chinese = () => {
 
             <div className="grid gap-8 lg:grid-cols-2">
               <Card className="rounded-3xl border border-border/40 bg-background/95 p-8 shadow-lg">
-                <form className="space-y-5">
+                <form 
+                  action="https://formsubmit.co/admin@gibblawyers.com"
+                  method="POST"
+                  className="space-y-5"
+                >
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_next" value="/thank-you" />
                   <div className="space-y-2">
                     <Label htmlFor="name">姓名</Label>
-                    <Input id="name" placeholder="您的姓名" className="min-h-[44px]" />
+                    <Input id="name" name="name" placeholder="您的姓名" className="min-h-[44px]" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">电话</Label>
-                    <Input id="phone" placeholder="您的电话号码" className="min-h-[44px]" />
+                    <Input id="phone" name="phone" placeholder="您的电话号码" className="min-h-[44px]" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">电邮地址</Label>
-                    <Input id="email" type="email" placeholder="您的电邮地址" className="min-h-[44px]" />
+                    <Input id="email" name="email" type="email" placeholder="您的电邮地址" className="min-h-[44px]" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="subject">主题</Label>
-                    <Input id="subject" placeholder="咨询主题" className="min-h-[44px]" />
+                    <Input id="subject" name="subject" placeholder="咨询主题" className="min-h-[44px]" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="message">讯息</Label>
-                    <Textarea id="message" placeholder="请描述您的法律需求..." rows={5} />
+                    <Textarea id="message" name="message" placeholder="请描述您的法律需求..." rows={5} required />
                   </div>
-                  <Button className="w-full min-h-[48px] text-base font-semibold">
+                  <Button type="submit" className="w-full min-h-[48px] text-base font-semibold">
                     <Mail className="mr-2 h-5 w-5" />
                     发送咨询
                   </Button>

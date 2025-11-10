@@ -7,37 +7,37 @@ const Lawyers = () => {
   const lawyers = [
     {
       name: "ZORINAH BT.MOHD SOBRI",
-      position: "MANAGING PARTNER",
+      position: "PARTNER",
       image: "https://gibblawyers.com/wp-content/uploads/2021/04/GIBB_PuanZ_thumbnail.jpg",
       url: "/lawyers/zorinah-mohd-sobri",
-      credentials: "LLB (Hons), University of Malaya • Called to Malaysian Bar 1995",
-      experience: "29+ years of legal practice",
-      specializations: ["Corporate Law", "Banking & Finance", "Real Estate"]
+      credentials: "LLB (Hons), University of Malaya • Called to Malaysian Bar 1988",
+      experience: "36+ years of legal practice",
+      specializations: ["Civil Litigation", "Corporate Advisory", "Probate & Estate"]
     },
     {
       name: "E. ERNEST BALASINGAM",
       position: "SENIOR PARTNER",
       image: "https://gibblawyers.com/wp-content/uploads/2021/04/GIBB_ERNEST_thumbnail.jpg",
       url: "/lawyers/ernest-balasingam",
-      credentials: "LLB (Hons), University of London • Called to Malaysian Bar 1988",
-      experience: "36+ years of legal practice",
-      specializations: ["Litigation", "Criminal Law", "Civil Disputes"]
+      credentials: "LLB, University of Wolverhampton • Called to Malaysian Bar 1996",
+      experience: "29+ years of legal practice",
+      specializations: ["Employment Law", "Industrial Relations", "Judicial Review"]
     },
     {
       name: "EDWIN SEIBEL (A.M.P)",
       position: "SENIOR PARTNER",
       image: "https://gibblawyers.com/wp-content/uploads/2021/04/GIBB_ES_thumbnail-copy.jpg",
       url: "/lawyers/edwin-seibel",
-      credentials: "LLB (Hons), University of Malaya • Advocate & Solicitor of High Court of Malaya",
-      experience: "32+ years of legal practice",
-      specializations: ["Employment Law", "Industrial Relations", "Commercial Law"]
+      credentials: "LLB (Hons), University of London • Called to Malaysian Bar 1997",
+      experience: "28+ years of legal practice",
+      specializations: ["Civil Litigation", "Corporate Advisory", "Property & Trust"]
     }
   ];
 
   return (
     <Layout 
-      title="Meet Our Lawyers - Gibb Lawyers"
-      description="We invest in our people to be better stakeholders for our Client-Partners. Our lawyers are vastly experienced in their array of expertise."
+      title="Our Lawyers | Experienced Legal Partners in Malaysia - Gibb Lawyers"
+      description="Meet our senior partners: Zorinah Mohd Sobri, Ernest Balasingam, and Edwin Seibel. Combined 90+ years of legal expertise in corporate law, employment law, litigation, and property matters. Serving clients across Malaysia from Ipoh and Teluk Intan."
     >
       {/* Header Section */}
       <section className="relative overflow-hidden">
@@ -55,7 +55,30 @@ const Lawyers = () => {
                 The senior team guiding clients through Malaysia's most complex matters
               </h1>
               <p className="text-base text-muted-foreground sm:text-lg">
-                With more than 95 years of combined practice, our partners pair heritage experience with modern insight to deliver decisive legal strategies for businesses and families alike.
+                With more than 90 years of combined practice, our partners pair heritage experience with modern insight to deliver decisive legal strategies for businesses and families alike.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Legacy Highlight */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-muted/15">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto flex max-w-4xl flex-col overflow-hidden rounded-3xl bg-background/95 shadow-lg ring-1 ring-border/30 md:flex-row">
+            <img
+              src="/images/heritage/william-ernest-balasingam.jpg"
+              alt="William Ernest Balasingam"
+              className="h-72 w-full object-cover md:h-auto md:w-64"
+              loading="lazy"
+            />
+            <div className="flex flex-1 flex-col justify-center gap-4 p-6 sm:p-8">
+              <span className="inline-flex w-max items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                Legacy in chambers
+              </span>
+              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">William Ernest Balasingam</h2>
+              <p className="text-sm text-muted-foreground sm:text-base">
+                Called in 1920 and leading Gibb &amp; Co until 2004, William Ernest Balasingam embodied the Inns of Court traditions we carry into every mandate today.
               </p>
             </div>
           </div>

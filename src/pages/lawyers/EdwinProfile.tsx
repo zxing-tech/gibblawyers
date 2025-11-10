@@ -180,16 +180,19 @@ const EdwinProfile = () => {
             <Card className="border border-border/50">
               <CardContent className="p-8 space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  With over 28 years of legal experience, I am an Advocate and Solicitor based in Ipoh, serving as Senior Partner at Gibb & Co., Advocates & Solicitors, one of the city's longstanding law firms.
+                  Edwin Seibel is an Advocate and Solicitor of the High Court of Malaya with more than 28 years of practice. As Senior Partner of Gibb & Co. in Ipoh, he stewards one of the city’s most established firms and continues its tradition of meticulous, client-centred advocacy.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  My practice spans civil and commercial litigation, corporate advisory, property and trust matters, employment law, and family law. I take pride in delivering clear, practical, and solution-oriented counsel rooted in professionalism, ethics, and empathy for clients' needs.
+                  His caseload spans civil and commercial litigation, corporate advisory mandates, property and trust matters, employment disputes, and family law. Clients rely on Edwin for clear, practical strategies that balance legal precision with empathy for the people behind every brief.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  He is regularly instructed on shareholder arrangements, joint ventures, real estate transactions, and complex documentation—from sale and purchase and loan agreements to settlement terms and trust instruments.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Beyond chambers, Edwin is a committed community leader. Twice elected President of the Rotary Club of Ipoh and a two-term Assistant Governor for Rotary International District 3300, he champions initiatives that support orphans, underprivileged families, and special-needs children.
                 </p>
                 <p className="text-lg text-primary font-medium leading-relaxed italic">
-                  I believe that every case deserves diligence, every client deserves respect, and every outcome should reflect fairness and integrity.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Beyond the courtroom, I am passionate about community leadership and service above self. Faith, gratitude, and service guide both my professional journey and personal purposes.
+                  “Life is God’s gift to us. What we do with it is our gift to God.” Faith, gratitude, and service continue to anchor his professional and personal purpose.
                 </p>
               </CardContent>
             </Card>
@@ -211,11 +214,30 @@ const EdwinProfile = () => {
             </div>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {specializations.map((spec, index) => (
-                <Badge key={index} variant="outline" className="p-3 text-center justify-center border-primary/30 text-primary hover:bg-primary/10">
-                  {spec}
-                </Badge>
-              ))}
+              {specializations.map((spec, index) => {
+                const serviceMap: Record<string, string> = {
+                  "Civil Litigation": "/services/litigation-adr",
+                  "Commercial Litigation": "/services/litigation-adr",
+                  "Corporate Advisory": "/services/corporate-commercial",
+                  "Property & Trust Matters": "/services/trust-estates",
+                  "Employment Law": "/services/employment",
+                  "Family Law": "/services/family-law",
+                  "Real Estate Transactions": "/services/real-estate-conveyancing",
+                  "Dispute Resolution": "/services/litigation-adr"
+                };
+                const url = serviceMap[spec];
+                return url ? (
+                  <Link key={index} to={url}>
+                    <Badge variant="outline" className="w-full p-3 text-center justify-center border-primary/30 text-primary hover:bg-primary/10 cursor-pointer transition">
+                      {spec}
+                    </Badge>
+                  </Link>
+                ) : (
+                  <Badge key={index} variant="outline" className="p-3 text-center justify-center border-primary/30 text-primary">
+                    {spec}
+                  </Badge>
+                );
+              })}
             </div>
           </div>
         </div>

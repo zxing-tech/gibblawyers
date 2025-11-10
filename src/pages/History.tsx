@@ -36,24 +36,34 @@ const History = () => {
 
   const heritageGallery = [
     {
-      src: "/images/WhatsApp Image 2025-10-10 at 11.26.16_4a415d21.jpg",
+      src: "/images/heritage/1914-power-of-attorney-open.jpg",
       title: "1914 Power of Attorney",
       description: "Handwritten deed executed by Gibb & Co with original seals and endorsements."
     },
     {
-      src: "/images/WhatsApp Image 2025-10-10 at 11.26.16_1052c524.jpg",
+      src: "/images/heritage/1914-deed-cover.jpg",
       title: "Stamped Deed Cover",
       description: "Outer sheet featuring duty stamps that authenticated early firm matters."
     },
     {
-      src: "/images/WhatsApp Image 2025-10-10 at 11.26.42_eb25a5a6.jpg",
+      src: "/images/heritage/1948-sitwell-letter.jpg",
       title: "1948 Solicitors’ Letter",
       description: "Correspondence confirming fees owed to Gibb & Co, evidencing long-standing international work."
     },
     {
-      src: "/images/WhatsApp Image 2025-10-02 at 15.07.18_7d8f2942.jpg",
+      src: "/images/heritage/heritage-ledger-safe.jpg",
       title: "Heritage Ledger Safe",
       description: "Fireproof safe still protecting wills and deeds within chambers today."
+    },
+    {
+      src: "/images/heritage/chambers-portrait-wall.jpg",
+      title: "Judiciary Portrait Wall",
+      description: "Caricatured judges surround the Inns of Court crest, reflecting the firm’s British legal lineage."
+    },
+    {
+      src: "/images/heritage/chambers-vignette.jpg",
+      title: "Chambers Display",
+      description: "The Inns of Court crest, W.E. Balasingam portrait, and barrister’s wig greeting visitors in Ipoh."
     }
   ];
 
@@ -82,8 +92,8 @@ const History = () => {
 
   return (
     <Layout 
-      title="Our History - Gibb Lawyers"
-      description="Discover the rich heritage of Gibb & Co, established in 1892 by Alfred Montagu Gibb. Over 130 years of legal excellence in Malaysia."
+      title="Our History | 130+ Years of Legal Excellence Since 1892 - Gibb Lawyers"
+      description="Discover Gibb & Co's rich heritage - established in 1892 by Alfred Montagu Gibb in Ipoh, Malaysia. Over 130 years of legal excellence, serving generations of clients with integrity and expertise."
     >
       {/* Header Section */}
       <section className="relative overflow-hidden">

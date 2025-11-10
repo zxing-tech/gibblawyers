@@ -2,6 +2,7 @@ import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, ArrowLeft } from 'lucide-react';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const ThankYou = () => {
   return (
@@ -29,14 +30,22 @@ const ThankYou = () => {
 
             <div className="space-y-3 text-sm sm:text-base text-muted-foreground">
               <p>
-                For urgent matters, please call us directly at <strong className="text-foreground">+605 547 1313 (Ipoh)</strong> or <strong className="text-foreground">+605 623 1713 (Teluk Intan)</strong>.
+                For urgent matters, please call us directly at <a href="tel:+6055471313" className="font-semibold text-primary underline-offset-4 hover:underline">+605 547 1313 (Ipoh)</a> or <a href="tel:+6056231713" className="font-semibold text-primary underline-offset-4 hover:underline">+605 623 1713 (Teluk Intan)</a>.
               </p>
               <p>
-                Prefer WhatsApp? Reach us instantly at <strong className="text-foreground">+60 12-516 2687</strong>.
+                Prefer WhatsApp? Reach us instantly:
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+            <div className="flex justify-center">
+              <WhatsAppButton
+                href="https://api.whatsapp.com/send/?phone=60125162687&text=Hi+there&app_absent=0"
+                label="WhatsApp Us"
+                className="min-h-[52px] px-8 py-4 font-semibold"
+              />
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-6">
               <Button asChild size="lg" className="min-h-[52px] px-8 py-4 font-semibold">
                 <Link to="/">
                   <ArrowLeft className="h-5 w-5 mr-2" />

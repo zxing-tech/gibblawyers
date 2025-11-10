@@ -89,13 +89,19 @@ const Index = () => {
       title: "Bar Council Recognition",
       year: "2022",
       description: "Acknowledged for professional standards and ethics"
+    },
+    {
+      image: '/images/heritage/inns-of-court-crest.jpg',
+      title: "Inns of Court Crest",
+      year: "Presented to Gibb & Co",
+      description: "Symbol of the British legal tradition that continues to guide our partners."
     }
   ];
 
   return (
     <Layout 
-      title="Gibb Lawyers - Experience you need. Achievements you get."
-      description="Let Us Take Care of You Legally. Experience you need. Achievements you get."
+      title="Gibb Lawyers | Leading Law Firm in Malaysia Since 1892"
+      description="Gibb & Co. Advocates & Solicitors - Malaysia's trusted law firm with 130+ years of excellence. Expert legal services in corporate law, litigation, property, employment, and family matters across Ipoh and Teluk Intan."
     >
       {/* Hero Section */}
       <section className="relative overflow-hidden">
@@ -308,13 +314,22 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-4 max-w-5xl mx-auto">
             {awards.map((award) => (
               <Card key={award.title} className="h-full border border-border/40 bg-background/90 shadow-md">
                 <CardContent className="flex h-full flex-col items-center text-center p-8">
-                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <award.icon className="h-7 w-7" />
-                  </div>
+                  {award.image ? (
+                    <img
+                      src={award.image}
+                      alt={award.title}
+                      className="mb-6 h-24 w-24 rounded-full object-cover object-center shadow-md"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <award.icon className="h-7 w-7" />
+                    </div>
+                  )}
                   <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{award.title}</h3>
                   <p className="mt-2 text-sm font-medium text-primary sm:text-base">{award.year}</p>
                   <p className="mt-4 text-sm text-muted-foreground sm:text-base">

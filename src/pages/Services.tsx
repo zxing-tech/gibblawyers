@@ -37,8 +37,8 @@ const Services = () => {
 
   return (
     <Layout 
-      title="Our Legal Services - Gibb Lawyers"
-      description="Comprehensive legal services with over 130 years of experience. We provide expert solutions across multiple areas of law."
+      title="Legal Services Malaysia | Corporate, Litigation & Property Law - Gibb Lawyers"
+      description="Comprehensive legal services in Malaysia: Corporate & Commercial Law, Litigation & ADR, Real Estate, Employment Law, Family Law, Banking & Finance. Expert lawyers with 130+ years of experience in Ipoh and Teluk Intan."
     >
       <div className="min-h-screen bg-background">
         {/* Header Section */}

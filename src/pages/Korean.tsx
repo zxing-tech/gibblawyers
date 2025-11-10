@@ -116,28 +116,34 @@ const Korean = () => {
 
             <div className="grid gap-8 lg:grid-cols-2">
               <Card className="rounded-3xl border border-border/40 bg-background/95 p-8 shadow-lg">
-                <form className="space-y-5">
+                <form 
+                  action="https://formsubmit.co/admin@gibblawyers.com"
+                  method="POST"
+                  className="space-y-5"
+                >
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_next" value="/thank-you" />
                   <div className="space-y-2">
                     <Label htmlFor="name">이름</Label>
-                    <Input id="name" placeholder="성함을 입력해주세요" className="min-h-[44px]" />
+                    <Input id="name" name="name" placeholder="성함을 입력해주세요" className="min-h-[44px]" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">전화번호</Label>
-                    <Input id="phone" placeholder="연락처를 입력해주세요" className="min-h-[44px]" />
+                    <Input id="phone" name="phone" placeholder="연락처를 입력해주세요" className="min-h-[44px]" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">이메일 주소</Label>
-                    <Input id="email" type="email" placeholder="이메일 주소를 입력해주세요" className="min-h-[44px]" />
+                    <Input id="email" name="email" type="email" placeholder="이메일 주소를 입력해주세요" className="min-h-[44px]" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="subject">제목</Label>
-                    <Input id="subject" placeholder="문의 제목" className="min-h-[44px]" />
+                    <Input id="subject" name="subject" placeholder="문의 제목" className="min-h-[44px]" required />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="message">메시지</Label>
-                    <Textarea id="message" placeholder="법률 상담이 필요한 사항을 자세히 설명해주세요..." rows={5} />
+                    <Textarea id="message" name="message" placeholder="법률 상담이 필요한 사항을 자세히 설명해주세요..." rows={5} required />
                   </div>
-                  <Button className="w-full min-h-[48px] text-base font-semibold">
+                  <Button type="submit" className="w-full min-h-[48px] text-base font-semibold">
                     <Mail className="mr-2 h-5 w-5" />
                     문의 보내기
                   </Button>

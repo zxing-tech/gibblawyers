@@ -20,34 +20,34 @@ import { Link } from 'react-router-dom';
 
 const ErnestProfile = () => {
   const specializations = [
-    "Litigation",
-    "Criminal Law", 
-    "Civil Disputes",
-    "Commercial Disputes",
-    "Employment Disputes",
-    "Contract Law",
-    "Tort Law",
-    "Administrative Law"
+    "Employment Law",
+    "Industrial Relations Litigation",
+    "Organisational Right-Sizing & Compliance",
+    "Judicial Review",
+    "Wills & Trusts",
+    "Estate Administration & Executorship",
+    "General Civil Litigation",
+    "Conveyancing"
   ];
 
   const achievements = [
-    "Successfully defended over 1000 criminal cases",
-    "Leading advocate in Malaysian High Court",
-    "Expert in complex commercial litigation",
-    "Recognized for outstanding advocacy skills",
-    "Regular speaker at legal training programs",
-    "Mentor to junior advocates"
+    "Senior Partner at Gibb & Co. focusing on employment law, industrial relations, and judicial review",
+    "Founder of Back2Basics Consultants, an HRDCorp Registered Training Provider",
+    "Accredited HRDCorp trainer (2024) and Level 1 ESG practitioner (2025)",
+    "Certified Neuro Linguistic Programming practitioner (2022)",
+    "Instrumental in forming the Malaysian and Perak Triathlon Associations in the early 1990s",
+    "Cycling-based charity advocate with Sepeda Amal Borneo (SAB) and AWOL Riders"
   ];
 
   const education = [
     {
       degree: "Bachelor of Laws (Hons)",
-      institution: "University of London",
-      year: "1988"
+      institution: "University of Wolverhampton",
+      year: "1995"
     },
     {
-      degree: "Certificate in Legal Practice",
-      institution: "Legal Profession Qualifying Board",
+      degree: "Bachelor of Physical & Health Education",
+      institution: "University of Toronto",
       year: "1988"
     }
   ];
@@ -57,32 +57,32 @@ const ErnestProfile = () => {
       period: "2005 - Present",
       role: "Senior Partner",
       company: "Gibb & Co",
-      description: "Leading the litigation department and handling complex criminal and civil matters"
+      description: "Leading the employment law and industrial relations department, advising on high-stakes restructuring, employee misconduct investigations, and regulatory compliance mandates."
     },
     {
       period: "1995 - 2005",
       role: "Partner",
       company: "Gibb & Co",
-      description: "Specialized in criminal defense and commercial litigation"
+      description: "Specialized in employment law, industrial relations, and judicial review, with a focus on HR consulting and workplace mental health."
     },
     {
       period: "1988 - 1995",
       role: "Associate",
       company: "Gibb & Co",
-      description: "Built foundation in general litigation and criminal law practice"
+      description: "Built foundation in general litigation and employment law practice."
     }
   ];
 
   const notableCase = {
-    title: "Landmark Commercial Dispute Resolution",
-    year: "2022",
-    description: "Successfully represented multinational corporation in complex contractual dispute worth RM50 million, achieving favorable settlement through strategic litigation approach."
+    title: "Strategic Workforce Restructuring Advisory",
+    year: "2024",
+    description: "Advised a regional conglomerate through high-stakes restructuring, balancing regulatory compliance, employee relations, and organisational renewal."
   };
 
   return (
     <Layout 
       title="E. Ernest Balasingam - Senior Partner | Gibb Lawyers"
-      description="Meet E. Ernest Balasingam, Senior Partner at Gibb & Co with 36+ years of experience in Litigation, Criminal Law, and Civil Disputes."
+      description="Meet E. Ernest Balasingam, Senior Partner at Gibb & Co with expertise in employment law, industrial relations, and judicial review."
     >
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-accent/10 via-secondary/20 to-background py-16 sm:py-20 lg:py-32">
@@ -115,8 +115,7 @@ const ErnestProfile = () => {
                   </h1>
                   
                   <p className="text-xl text-muted-foreground leading-relaxed">
-                    A distinguished litigator with 36+ years of experience, specializing in criminal law, 
-                    civil disputes, and complex commercial litigation matters.
+                    Lawyer, HR strategist, and trainer specialising in employment law, industrial relations, and judicial review—valued for legal precision, strategic pragmatism, and a deep understanding of organisational dynamics.
                   </p>
                 </div>
 
@@ -125,15 +124,15 @@ const ErnestProfile = () => {
                   <Card className="border border-accent/20 bg-accent/5">
                     <CardContent className="p-6 text-center">
                       <Clock className="h-8 w-8 text-accent mx-auto mb-3" />
-                      <div className="text-2xl font-bold text-accent mb-1">36+</div>
-                      <div className="text-sm text-muted-foreground">Years Experience</div>
+                      <div className="text-2xl font-bold text-accent mb-1">29+</div>
+                      <div className="text-sm text-muted-foreground">Years in Practice</div>
                     </CardContent>
                   </Card>
                   <Card className="border border-accent/20 bg-accent/5">
                     <CardContent className="p-6 text-center">
                       <Gavel className="h-8 w-8 text-accent mx-auto mb-3" />
-                      <div className="text-2xl font-bold text-accent mb-1">1000+</div>
-                      <div className="text-sm text-muted-foreground">Cases Defended</div>
+                      <div className="text-2xl font-bold text-accent mb-1">40 Years</div>
+                      <div className="text-sm text-muted-foreground">Endurance Athlete & Charity Rider</div>
                     </CardContent>
                   </Card>
                 </div>
@@ -159,7 +158,28 @@ const ErnestProfile = () => {
         </div>
       </section>
 
-      {/* Notable Case Spotlight */}
+      {/* About */}
+      <section className="py-16 sm:py-20 lg:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <Card className="border border-border/50">
+              <CardContent className="p-8 space-y-6">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Ernest Balasingam is Senior Partner at Gibb & Co. Advocates & Solicitors, where he has spent more than two decades specialising in employment law, industrial relations, and judicial review. He is engaged for high-stakes restructuring, employee misconduct investigations, and regulatory compliance mandates that call for legal rigor and a nuanced grasp of organisational dynamics.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  His academic grounding in Physical & Health Education (University of Toronto) and Law (University of Wolverhampton) reflects the discipline and adaptability that shape his work. As founder of Back2Basics Consultants—an HRDCorp Registered Training Provider—Ernest trains and advises companies on HR best practices, workplace mental health, leadership, and compliance frameworks, championing evidence-based policies over superficial fixes.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Outside chambers, Ernest’s four-decade journey as an endurance athlete fuels his community commitments. A former triathlete, he helped establish the Malaysian and Perak Triathlon Associations in the early 1990s and continues to raise funds for underserved causes through cycling initiatives such as Sepeda Amal Borneo (SAB) and AWOL Riders.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Signature Matter */}
       <section className="py-16 sm:py-20 lg:py-32 bg-gradient-to-r from-accent/5 to-transparent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
@@ -167,7 +187,7 @@ const ErnestProfile = () => {
               <CardHeader>
                 <div className="flex items-center space-x-3 mb-4">
                   <Award className="h-6 w-6 text-accent" />
-                  <span className="text-sm font-medium text-accent">NOTABLE CASE</span>
+                  <span className="text-sm font-medium text-accent">SIGNATURE MATTER</span>
                 </div>
                 <CardTitle className="text-2xl">{notableCase.title}</CardTitle>
                 <p className="text-sm text-muted-foreground">{notableCase.year}</p>
@@ -194,11 +214,30 @@ const ErnestProfile = () => {
             </div>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {specializations.map((spec, index) => (
-                <Badge key={index} variant="outline" className="p-3 text-center justify-center border-accent/30 text-accent hover:bg-accent/10">
-                  {spec}
-                </Badge>
-              ))}
+              {specializations.map((spec, index) => {
+                const serviceMap: Record<string, string> = {
+                  "Employment Law": "/services/employment",
+                  "Industrial Relations Litigation": "/services/employment",
+                  "Organisational Right-Sizing & Compliance": "/services/employment",
+                  "Judicial Review": "/services/administrative-law",
+                  "Wills & Trusts": "/services/trust-estates",
+                  "Estate Administration & Executorship": "/services/trust-estates",
+                  "General Civil Litigation": "/services/litigation-adr",
+                  "Conveyancing": "/services/real-estate-conveyancing"
+                };
+                const url = serviceMap[spec];
+                return url ? (
+                  <Link key={index} to={url}>
+                    <Badge variant="outline" className="w-full p-3 text-center justify-center border-accent/30 text-accent hover:bg-accent/10 cursor-pointer transition">
+                      {spec}
+                    </Badge>
+                  </Link>
+                ) : (
+                  <Badge key={index} variant="outline" className="p-3 text-center justify-center border-accent/30 text-accent">
+                    {spec}
+                  </Badge>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -228,7 +267,7 @@ const ErnestProfile = () => {
                   ))}
                   <div className="mt-6 p-4 bg-accent/5 rounded-lg border border-accent/20">
                     <p className="text-sm font-medium text-accent">
-                      Called to Malaysian Bar: 1988
+                      Called to Malaysian Bar: 1996
                     </p>
                   </div>
                 </CardContent>
