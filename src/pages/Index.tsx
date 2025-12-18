@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Scale, Calendar, ArrowRight, Star, Award, Shield, Quote, Trophy, CheckCircle, HeartHandshake } from 'lucide-react';
+import { Users, Scale, Calendar, ArrowRight, Star, Award, Shield, Quote, Trophy, CheckCircle, HeartHandshake, BookOpen } from 'lucide-react';
 
 const Index = () => {
   const services = [
@@ -16,7 +16,7 @@ const Index = () => {
     },
     {
       icon: Scale,
-      title: "Services", 
+      title: "Services",
       subtitle: "Explore Our Legal",
       description: "Comprehensive legal services across multiple practice areas",
       link: "/services",
@@ -27,7 +27,7 @@ const Index = () => {
       title: "Consultation",
       subtitle: "Schedule Your",
       description: "Book a consultation with our expert legal team",
-      link: "/contact", 
+      link: "/contact",
       color: "text-primary"
     }
   ];
@@ -45,7 +45,7 @@ const Index = () => {
     },
     {
       icon: Star,
-      title: "Client Success", 
+      title: "Client Success",
       description: "Dedicated to achieving the best outcomes for our clients"
     }
   ];
@@ -73,7 +73,7 @@ const Index = () => {
     }
   ];
 
-  const awards = [
+  const awards: { icon: any; title: string; year: string; description: string; image?: string }[] = [
     {
       icon: Trophy,
       title: "Litigation Finalist 2025",
@@ -101,7 +101,7 @@ const Index = () => {
   ];
 
   return (
-    <Layout 
+    <Layout
       title="Gibb Lawyers | Leading Law Firm in Malaysia Since 1892"
       description="Gibb & Co. Advocates & Solicitors - Malaysia's trusted law firm with 130+ years of excellence. Expert legal services in corporate law, litigation, property, employment, and family matters in Ipoh."
     >
@@ -376,6 +376,22 @@ const Index = () => {
                   <Award className="h-5 w-5" />
                   Our expertise
                 </Link>
+              </Button>
+              <Button
+                asChild
+                variant="ghost"
+                size="lg"
+                className="w-full sm:w-auto min-h-[52px] px-6 sm:px-8 font-semibold hover:bg-primary/5 text-primary"
+              >
+                <a
+                  href="/docs/gibb-firm-profile.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                >
+                  <BookOpen className="h-5 w-5" />
+                  Firm Profile (PDF)
+                </a>
               </Button>
             </div>
           </div>

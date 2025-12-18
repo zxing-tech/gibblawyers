@@ -92,6 +92,16 @@ const Footer = () => {
               <Link to="/terms-of-service" className="text-primary hover:text-primary/80 transition-colors underline-offset-4 hover:underline">
                 Terms of Service
               </Link>
+              <span className="mx-3">|</span> 
+              <a 
+                href="/docs/gibb-firm-profile.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-primary hover:text-primary/80 transition-colors underline-offset-4 hover:underline inline-flex items-center gap-1"
+              >
+                Firm Profile
+                <ExternalLink className="h-3 w-3" />
+              </a>
             </p>
             <div className="flex items-center justify-center space-x-3 pt-4">
               <div className="w-6 h-px bg-primary/40"></div>

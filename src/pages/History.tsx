@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout';
 import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Calendar, Award, MapPin, Users, BookOpen, Scale } from 'lucide-react';
+import { Calendar, Award, MapPin, Users, BookOpen, Scale, ExternalLink } from 'lucide-react';
 
 const History = () => {
   const timelineEvents = [
@@ -13,7 +13,7 @@ const History = () => {
       highlight: true
     },
     {
-      year: "1906", 
+      year: "1906",
       title: "Leadership Transition",
       description: "Upon Alfred Montagu Gibb's retirement, Ashworth Hope joins as partner, and the firm is renamed to Gibb & Hope, continuing the tradition of excellence.",
       icon: Users,
@@ -21,7 +21,7 @@ const History = () => {
     },
     {
       year: "1920s",
-      title: "Expansion & Growth", 
+      title: "Expansion & Growth",
       description: "The firm establishes itself as a leading legal practice in Perak, serving the growing commercial and colonial community with comprehensive legal services.",
       icon: Scale,
       highlight: false
@@ -107,7 +107,7 @@ const History = () => {
   const [preview, setPreview] = useState<{ src: string; title: string; description: string } | null>(null);
 
   return (
-    <Layout 
+    <Layout
       title="Our History | 130+ Years of Legal Excellence Since 1892 - Gibb Lawyers"
       description="Discover Gibb & Co's rich heritage - established in 1892 by Alfred Montagu Gibb in Ipoh, Malaysia. Over 130 years of legal excellence, serving generations of clients with integrity and expertise."
     >
@@ -138,80 +138,80 @@ const History = () => {
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl space-y-10">
-              <div className="space-y-8">
-                <div className="space-y-5">
-                  <span className="inline-flex items-center justify-center rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-                    The beginning
-                  </span>
-                  <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
-                    Alfred Montagu Gibb’s vision for service
-                  </h2>
-                  <p className="text-sm text-muted-foreground sm:text-base">
-                    In 1892, Alfred Montagu Gibb arrived in Penang, envisioning a legal practice grounded in trust and community impact. Gibb & Co grew from those principles, serving a rapidly developing Malaya with dependable counsel.
-                  </p>
-                  <p className="text-sm text-muted-foreground sm:text-base">
-                    His dedication to rigorous standards and client advocacy set the values that continue to guide our partners today.
-                  </p>
-                </div>
-              </div>
-
-              <Card className="mx-auto w-full lg:max-w-[calc(50%-0.75rem)] rounded-3xl border border-border/40 bg-background/95 shadow-lg">
-                <CardContent className="space-y-4 p-8 text-center">
-                  <Award className="mx-auto h-12 w-12 text-primary" />
-                  <h3 className="text-2xl font-semibold text-foreground sm:text-3xl">Founded 1892</h3>
-                  <p className="text-base text-muted-foreground sm:text-lg">
-                    “Integrity, excellence, and unwavering commitment to justice.”
-                  </p>
-                  <p className="text-xs font-medium text-primary sm:text-sm">- Alfred Montagu Gibb</p>
-                </CardContent>
-              </Card>
-
-              <div className="grid gap-6 lg:grid-cols-2 items-stretch">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {foundingPrinciples.map((principle, index) => (
-                    <Card key={index} className="rounded-2xl border border-border/40 bg-background/95 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
-                      <CardContent className="flex items-start gap-4 p-6">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                          <principle.icon className="h-5 w-5" />
-                        </div>
-                        <div className="space-y-2">
-                          <h3 className="text-base font-semibold text-foreground">{principle.title}</h3>
-                          <p className="text-sm text-muted-foreground">{principle.description}</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-
-                <Card className="flex h-full flex-col overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-xl"
-                  onMouseEnter={() => setPreview({
-                    src: "/images/heritage/1914-power-of-attorney-open.jpg",
-                    title: "1914 Power of Attorney",
-                    description: "Original Power of Attorney drafted by Gibb & Co, complete with sealing wax and endorsements, illustrating early twentieth-century legal craftsmanship."
-                  })}
-                  onMouseLeave={() => setPreview(null)}
-                >
-                  <div className="relative w-full bg-primary/5">
-                    <div className="aspect-[4/3]"></div>
-                    <img
-                      src="/images/heritage/1914-power-of-attorney-open.jpg"
-                      alt="1914 Power of Attorney executed by Gibb & Co"
-                      className="absolute inset-0 h-full w-full object-contain p-6"
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardContent className="space-y-3 p-6 text-center">
-                    <h3 className="text-xl font-semibold text-foreground sm:text-2xl">1914 Power of Attorney</h3>
-                    <p className="text-sm text-muted-foreground sm:text-base">
-                      Original Power of Attorney drafted by Gibb &amp; Co, complete with sealing wax and endorsements, illustrating early twentieth-century legal craftsmanship.
-                    </p>
-                    <p className="text-xs font-medium text-primary sm:text-sm">Preserved in the firm’s heritage archives</p>
-                  </CardContent>
-                </Card>
+            <div className="space-y-8">
+              <div className="space-y-5">
+                <span className="inline-flex items-center justify-center rounded-full bg-accent/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+                  The beginning
+                </span>
+                <h2 className="text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
+                  Alfred Montagu Gibb’s vision for service
+                </h2>
+                <p className="text-sm text-muted-foreground sm:text-base">
+                  In 1892, Alfred Montagu Gibb arrived in Penang, envisioning a legal practice grounded in trust and community impact. Gibb & Co grew from those principles, serving a rapidly developing Malaya with dependable counsel.
+                </p>
+                <p className="text-sm text-muted-foreground sm:text-base">
+                  His dedication to rigorous standards and client advocacy set the values that continue to guide our partners today.
+                </p>
               </div>
             </div>
+
+            <Card className="mx-auto w-full lg:max-w-[calc(50%-0.75rem)] rounded-3xl border border-border/40 bg-background/95 shadow-lg">
+              <CardContent className="space-y-4 p-8 text-center">
+                <Award className="mx-auto h-12 w-12 text-primary" />
+                <h3 className="text-2xl font-semibold text-foreground sm:text-3xl">Founded 1892</h3>
+                <p className="text-base text-muted-foreground sm:text-lg">
+                  “Integrity, excellence, and unwavering commitment to justice.”
+                </p>
+                <p className="text-xs font-medium text-primary sm:text-sm">- Alfred Montagu Gibb</p>
+              </CardContent>
+            </Card>
+
+            <div className="grid gap-6 lg:grid-cols-2 items-stretch">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {foundingPrinciples.map((principle, index) => (
+                  <Card key={index} className="rounded-2xl border border-border/40 bg-background/95 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+                    <CardContent className="flex items-start gap-4 p-6">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                        <principle.icon className="h-5 w-5" />
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-base font-semibold text-foreground">{principle.title}</h3>
+                        <p className="text-sm text-muted-foreground">{principle.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              <Card className="flex h-full flex-col overflow-hidden rounded-3xl border border-border/40 bg-background/95 shadow-xl"
+                onMouseEnter={() => setPreview({
+                  src: "/images/heritage/1914-power-of-attorney-open.jpg",
+                  title: "1914 Power of Attorney",
+                  description: "Original Power of Attorney drafted by Gibb & Co, complete with sealing wax and endorsements, illustrating early twentieth-century legal craftsmanship."
+                })}
+                onMouseLeave={() => setPreview(null)}
+              >
+                <div className="relative w-full bg-primary/5">
+                  <div className="aspect-[4/3]"></div>
+                  <img
+                    src="/images/heritage/1914-power-of-attorney-open.jpg"
+                    alt="1914 Power of Attorney executed by Gibb & Co"
+                    className="absolute inset-0 h-full w-full object-contain p-6"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="space-y-3 p-6 text-center">
+                  <h3 className="text-xl font-semibold text-foreground sm:text-2xl">1914 Power of Attorney</h3>
+                  <p className="text-sm text-muted-foreground sm:text-base">
+                    Original Power of Attorney drafted by Gibb &amp; Co, complete with sealing wax and endorsements, illustrating early twentieth-century legal craftsmanship.
+                  </p>
+                  <p className="text-xs font-medium text-primary sm:text-sm">Preserved in the firm’s heritage archives</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* Timeline Section */}
       <section className="py-16 sm:py-20 lg:py-24 bg-muted/20">
@@ -233,15 +233,13 @@ const History = () => {
               {timelineEvents.map((event, index) => (
                 <Card
                   key={index}
-                  className={`rounded-3xl border ${
-                    event.highlight ? 'border-primary/40 bg-primary/5 shadow-lg' : 'border-border/40 bg-background/95 shadow'
-                  } transition hover:-translate-y-1 hover:shadow-xl`}
+                  className={`rounded-3xl border ${event.highlight ? 'border-primary/40 bg-primary/5 shadow-lg' : 'border-border/40 bg-background/95 shadow'
+                    } transition hover:-translate-y-1 hover:shadow-xl`}
                 >
                   <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-start sm:gap-8 sm:p-8">
                     <div
-                      className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl text-primary ${
-                        event.highlight ? 'bg-primary text-primary-foreground' : 'bg-primary/10'
-                      }`}
+                      className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl text-primary ${event.highlight ? 'bg-primary text-primary-foreground' : 'bg-primary/10'
+                        }`}
                     >
                       <event.icon className="h-8 w-8" />
                     </div>
@@ -300,6 +298,23 @@ const History = () => {
                 </div>
               </CardContent>
             </Card>
+
+            <div className="flex justify-center pt-8">
+              <a
+                href="/docs/gibb-firm-profile.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="flex items-center space-x-3 glass-intense px-8 py-4 rounded-2xl hover:bg-primary/5 transition-all duration-300 border border-primary/20 hover:scale-105 group">
+                  <BookOpen className="h-6 w-6 text-primary" />
+                  <div className="text-left">
+                    <p className="text-sm font-semibold text-primary uppercase tracking-wider">Current Firm Profile</p>
+                    <p className="text-xs text-muted-foreground">Download our 2024-2025 Digital Profile</p>
+                  </div>
+                  <ExternalLink className="h-4 w-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity ml-4" />
+                </div>
+              </a>
+            </div>
 
             <div className="grid gap-6 pt-10 sm:grid-cols-2">
               {firmHeritageGallery.map((item) => (
