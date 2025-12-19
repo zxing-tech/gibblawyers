@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Scale, Calendar, ArrowRight, Star, Award, Shield, Quote, Trophy, CheckCircle, HeartHandshake, BookOpen } from 'lucide-react';
+import { Users, Scale, Calendar, ArrowRight, Star, Award, Shield, Quote, Trophy, CheckCircle, HeartHandshake, BookOpen, LucideIcon } from 'lucide-react';
 
 const Index = () => {
   const services = [
@@ -73,7 +73,7 @@ const Index = () => {
     }
   ];
 
-  const awards: { icon: any; title: string; year: string; description: string; image?: string }[] = [
+  const awards: { icon: LucideIcon; title: string; year: string; description: string; image?: string }[] = [
     {
       icon: Trophy,
       title: "Litigation Finalist 2025",
