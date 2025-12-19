@@ -128,7 +128,7 @@ const Index = () => {
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-balance text-foreground">
-                  Guiding Malaysian businesses & families with trusted legal expertise.
+                  Guiding Malaysiann businesses & families with trusted legal expertise.
                 </h1>
 
                 <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl text-pretty">
